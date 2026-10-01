@@ -1,0 +1,23 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "leads",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "assignedPartners", "arrayConfig": "CONTAINS" },
+        { "fieldPath": "assignedAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "partners",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "vertical", "order": "ASCENDING" },
+        { "fieldPath": "isActive", "order": "ASCENDING" },
+        { "fieldPath": "assignedDepartments", "arrayConfig": "CONTAINS" },
+        { "fieldPath": "credits", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

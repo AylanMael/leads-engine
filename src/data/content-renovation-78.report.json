@@ -1,0 +1,463 @@
+{
+  "generatedAt": "2026-10-01T14:58:52.717Z",
+  "departmentCode": "78",
+  "vertical": "renovation",
+  "total": 90,
+  "validated": 90,
+  "threshold": 0.25,
+  "maximumSimilarity": 0.24867724867724866,
+  "comparisons": [
+    {
+      "slug": "ablis-78660",
+      "comparedWith": "bailly-78870",
+      "score": 0.16666666666666666
+    },
+    {
+      "slug": "acheres-78260",
+      "comparedWith": "orgeval-78630",
+      "score": 0.24864864864864866
+    },
+    {
+      "slug": "andresy-78570",
+      "comparedWith": "carrieres-sous-poissy-78955",
+      "score": 0.23204419889502761
+    },
+    {
+      "slug": "aubergenville-78410",
+      "comparedWith": "limay-78520",
+      "score": 0.21794871794871795
+    },
+    {
+      "slug": "bailly-78870",
+      "comparedWith": "ablis-78660",
+      "score": 0.16666666666666666
+    },
+    {
+      "slug": "beynes-78650",
+      "comparedWith": "guyancourt-78280",
+      "score": 0.23655913978494625
+    },
+    {
+      "slug": "bois-d-arcy-78390",
+      "comparedWith": "le-perray-en-yvelines-78610",
+      "score": 0.24175824175824176
+    },
+    {
+      "slug": "bonnieres-sur-seine-78270",
+      "comparedWith": "coignieres-78310",
+      "score": 0.19402985074626866
+    },
+    {
+      "slug": "bougival-78380",
+      "comparedWith": "andresy-78570",
+      "score": 0.21243523316062177
+    },
+    {
+      "slug": "buc-78530",
+      "comparedWith": "la-verriere-78320",
+      "score": 0.23604060913705585
+    },
+    {
+      "slug": "buchelay-78200",
+      "comparedWith": "chevreuse-78460",
+      "score": 0.23821989528795812
+    },
+    {
+      "slug": "carrieres-sous-poissy-78955",
+      "comparedWith": "andresy-78570",
+      "score": 0.23204419889502761
+    },
+    {
+      "slug": "carrieres-sur-seine-78420",
+      "comparedWith": "poissy-78300",
+      "score": 0.2452316076294278
+    },
+    {
+      "slug": "chambourcy-78240",
+      "comparedWith": "saint-cyr-l-ecole-78210",
+      "score": 0.24128686327077747
+    },
+    {
+      "slug": "chanteloup-les-vignes-78570",
+      "comparedWith": "carrieres-sur-seine-78420",
+      "score": 0.15675675675675677
+    },
+    {
+      "slug": "chatou-78400",
+      "comparedWith": "saint-cyr-l-ecole-78210",
+      "score": 0.24119241192411925
+    },
+    {
+      "slug": "chevreuse-78460",
+      "comparedWith": "buchelay-78200",
+      "score": 0.23821989528795812
+    },
+    {
+      "slug": "coignieres-78310",
+      "comparedWith": "l-etang-la-ville-78620",
+      "score": 0.21608040201005024
+    },
+    {
+      "slug": "conflans-sainte-honorine-78700",
+      "comparedWith": "ecquevilly-78920",
+      "score": 0.22110552763819097
+    },
+    {
+      "slug": "croissy-sur-seine-78290",
+      "comparedWith": "bois-d-arcy-78390",
+      "score": 0.2396694214876033
+    },
+    {
+      "slug": "ecquevilly-78920",
+      "comparedWith": "plaisir-78370",
+      "score": 0.23155216284987276
+    },
+    {
+      "slug": "elancourt-78990",
+      "comparedWith": "poissy-78300",
+      "score": 0.24867724867724866
+    },
+    {
+      "slug": "epone-78680",
+      "comparedWith": "bois-d-arcy-78390",
+      "score": 0.18041237113402062
+    },
+    {
+      "slug": "feucherolles-78810",
+      "comparedWith": "croissy-sur-seine-78290",
+      "score": 0.23466666666666666
+    },
+    {
+      "slug": "fontenay-le-fleury-78330",
+      "comparedWith": "carrieres-sous-poissy-78955",
+      "score": 0.22905027932960895
+    },
+    {
+      "slug": "freneuse-78840",
+      "comparedWith": "acheres-78260",
+      "score": 0.2473404255319149
+    },
+    {
+      "slug": "gargenville-78440",
+      "comparedWith": "viroflay-78220",
+      "score": 0.24449877750611246
+    },
+    {
+      "slug": "guyancourt-78280",
+      "comparedWith": "vernouillet-78540",
+      "score": 0.2393617021276596
+    },
+    {
+      "slug": "houdan-78550",
+      "comparedWith": "saint-nom-la-breteche-78860",
+      "score": 0.23056300268096513
+    },
+    {
+      "slug": "houilles-78800",
+      "comparedWith": "mezieres-sur-seine-78970",
+      "score": 0.17336683417085427
+    },
+    {
+      "slug": "issou-78440",
+      "comparedWith": "poissy-78300",
+      "score": 0.23697916666666666
+    },
+    {
+      "slug": "jouars-pontchartrain-78760",
+      "comparedWith": "elancourt-78990",
+      "score": 0.23076923076923078
+    },
+    {
+      "slug": "jouy-en-josas-78350",
+      "comparedWith": "montigny-le-bretonneux-78180",
+      "score": 0.1375921375921376
+    },
+    {
+      "slug": "juziers-78820",
+      "comparedWith": "les-mureaux-78130",
+      "score": 0.1315136476426799
+    },
+    {
+      "slug": "l-etang-la-ville-78620",
+      "comparedWith": "coignieres-78310",
+      "score": 0.21608040201005024
+    },
+    {
+      "slug": "la-celle-saint-cloud-78170",
+      "comparedWith": "montigny-le-bretonneux-78180",
+      "score": 0.091324200913242
+    },
+    {
+      "slug": "la-verriere-78320",
+      "comparedWith": "elancourt-78990",
+      "score": 0.2371967654986523
+    },
+    {
+      "slug": "le-chesnay-rocquencourt-78150",
+      "comparedWith": "acheres-78260",
+      "score": 0.20959595959595959
+    },
+    {
+      "slug": "le-mesnil-le-roi-78600",
+      "comparedWith": "chevreuse-78460",
+      "score": 0.10904872389791183
+    },
+    {
+      "slug": "le-mesnil-saint-denis-78320",
+      "comparedWith": "andresy-78570",
+      "score": 0.22959183673469388
+    },
+    {
+      "slug": "le-pecq-78230",
+      "comparedWith": "neauphle-le-chateau-78640",
+      "score": 0.18274111675126903
+    },
+    {
+      "slug": "le-perray-en-yvelines-78610",
+      "comparedWith": "maule-78580",
+      "score": 0.24675324675324675
+    },
+    {
+      "slug": "le-port-marly-78560",
+      "comparedWith": "viroflay-78220",
+      "score": 0.22413793103448276
+    },
+    {
+      "slug": "le-vesinet-78110",
+      "comparedWith": "elancourt-78990",
+      "score": 0.23746701846965698
+    },
+    {
+      "slug": "les-clayes-sous-bois-78340",
+      "comparedWith": "buc-78530",
+      "score": 0.18886198547215496
+    },
+    {
+      "slug": "les-essarts-le-roi-78690",
+      "comparedWith": "acheres-78260",
+      "score": 0.24119241192411925
+    },
+    {
+      "slug": "les-mureaux-78130",
+      "comparedWith": "croissy-sur-seine-78290",
+      "score": 0.2
+    },
+    {
+      "slug": "limay-78520",
+      "comparedWith": "buc-78530",
+      "score": 0.22596153846153846
+    },
+    {
+      "slug": "louveciennes-78430",
+      "comparedWith": "trappes-78190",
+      "score": 0.19239904988123516
+    },
+    {
+      "slug": "magnanville-78200",
+      "comparedWith": "aubergenville-78410",
+      "score": 0.14962593516209477
+    },
+    {
+      "slug": "magny-les-hameaux-78114",
+      "comparedWith": "mareil-marly-78750",
+      "score": 0.24731182795698925
+    },
+    {
+      "slug": "maisons-laffitte-78600",
+      "comparedWith": "beynes-78650",
+      "score": 0.21243523316062177
+    },
+    {
+      "slug": "mantes-la-jolie-78200",
+      "comparedWith": "andresy-78570",
+      "score": 0.19023136246786632
+    },
+    {
+      "slug": "mantes-la-ville-78711",
+      "comparedWith": "bois-d-arcy-78390",
+      "score": 0.19651741293532338
+    },
+    {
+      "slug": "mareil-marly-78750",
+      "comparedWith": "magny-les-hameaux-78114",
+      "score": 0.24731182795698925
+    },
+    {
+      "slug": "marly-le-roi-78160",
+      "comparedWith": "neauphle-le-chateau-78640",
+      "score": 0.11666666666666667
+    },
+    {
+      "slug": "maule-78580",
+      "comparedWith": "le-perray-en-yvelines-78610",
+      "score": 0.24675324675324675
+    },
+    {
+      "slug": "maurecourt-78780",
+      "comparedWith": "carrieres-sous-poissy-78955",
+      "score": 0.20285714285714285
+    },
+    {
+      "slug": "maurepas-78310",
+      "comparedWith": "carrieres-sous-poissy-78955",
+      "score": 0.17158176943699732
+    },
+    {
+      "slug": "meulan-en-yvelines-78250",
+      "comparedWith": "le-vesinet-78110",
+      "score": 0.23017902813299232
+    },
+    {
+      "slug": "mezieres-sur-seine-78970",
+      "comparedWith": "viroflay-78220",
+      "score": 0.2159383033419023
+    },
+    {
+      "slug": "montesson-78360",
+      "comparedWith": "le-pecq-78230",
+      "score": 0.14754098360655737
+    },
+    {
+      "slug": "montigny-le-bretonneux-78180",
+      "comparedWith": "jouars-pontchartrain-78760",
+      "score": 0.21148825065274152
+    },
+    {
+      "slug": "morainvilliers-78630",
+      "comparedWith": "croissy-sur-seine-78290",
+      "score": 0.10653753026634383
+    },
+    {
+      "slug": "neauphle-le-chateau-78640",
+      "comparedWith": "acheres-78260",
+      "score": 0.24581005586592178
+    },
+    {
+      "slug": "noisy-le-roi-78590",
+      "comparedWith": "neauphle-le-chateau-78640",
+      "score": 0.15158924205378974
+    },
+    {
+      "slug": "orgeval-78630",
+      "comparedWith": "acheres-78260",
+      "score": 0.24864864864864866
+    },
+    {
+      "slug": "plaisir-78370",
+      "comparedWith": "saint-cyr-l-ecole-78210",
+      "score": 0.2351421188630491
+    },
+    {
+      "slug": "poissy-78300",
+      "comparedWith": "elancourt-78990",
+      "score": 0.24867724867724866
+    },
+    {
+      "slug": "porcheville-78440",
+      "comparedWith": "gargenville-78440",
+      "score": 0.2116788321167883
+    },
+    {
+      "slug": "rambouillet-78120",
+      "comparedWith": "poissy-78300",
+      "score": 0.15012106537530268
+    },
+    {
+      "slug": "rosny-sur-seine-78710",
+      "comparedWith": "le-perray-en-yvelines-78610",
+      "score": 0.17929292929292928
+    },
+    {
+      "slug": "saint-arnoult-en-yvelines-78730",
+      "comparedWith": "carrieres-sous-poissy-78955",
+      "score": 0.1953125
+    },
+    {
+      "slug": "saint-cyr-l-ecole-78210",
+      "comparedWith": "chambourcy-78240",
+      "score": 0.24128686327077747
+    },
+    {
+      "slug": "saint-germain-en-laye-78100",
+      "comparedWith": "mareil-marly-78750",
+      "score": 0.24603174603174602
+    },
+    {
+      "slug": "saint-nom-la-breteche-78860",
+      "comparedWith": "houdan-78550",
+      "score": 0.23056300268096513
+    },
+    {
+      "slug": "saint-remy-les-chevreuse-78470",
+      "comparedWith": "poissy-78300",
+      "score": 0.22715404699738903
+    },
+    {
+      "slug": "sartrouville-78500",
+      "comparedWith": "feucherolles-78810",
+      "score": 0.18932038834951456
+    },
+    {
+      "slug": "trappes-78190",
+      "comparedWith": "louveciennes-78430",
+      "score": 0.19239904988123516
+    },
+    {
+      "slug": "triel-sur-seine-78510",
+      "comparedWith": "mezieres-sur-seine-78970",
+      "score": 0.18407960199004975
+    },
+    {
+      "slug": "vaux-sur-seine-78740",
+      "comparedWith": "saint-cyr-l-ecole-78210",
+      "score": 0.14609571788413098
+    },
+    {
+      "slug": "velizy-villacoublay-78140",
+      "comparedWith": "houdan-78550",
+      "score": 0.2077922077922078
+    },
+    {
+      "slug": "verneuil-sur-seine-78480",
+      "comparedWith": "croissy-sur-seine-78290",
+      "score": 0.14659685863874344
+    },
+    {
+      "slug": "vernouillet-78540",
+      "comparedWith": "guyancourt-78280",
+      "score": 0.2393617021276596
+    },
+    {
+      "slug": "versailles-78000",
+      "comparedWith": "le-perray-en-yvelines-78610",
+      "score": 0.24266666666666667
+    },
+    {
+      "slug": "villennes-sur-seine-78670",
+      "comparedWith": "carrieres-sur-seine-78420",
+      "score": 0.2222222222222222
+    },
+    {
+      "slug": "villepreux-78450",
+      "comparedWith": "limay-78520",
+      "score": 0.1873479318734793
+    },
+    {
+      "slug": "villiers-saint-frederic-78640",
+      "comparedWith": "acheres-78260",
+      "score": 0.23684210526315788
+    },
+    {
+      "slug": "viroflay-78220",
+      "comparedWith": "gargenville-78440",
+      "score": 0.24449877750611246
+    },
+    {
+      "slug": "voisins-le-bretonneux-78960",
+      "comparedWith": "la-verriere-78320",
+      "score": 0.208955223880597
+    }
+  ],
+  "rejected": [],
+  "remaining": []
+}

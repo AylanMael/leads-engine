@@ -1,0 +1,56 @@
+# Ressources du serveur Cloud Run (pas de la machine de build).
+runConfig:
+  minInstances: 0
+  maxInstances: 5
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 2048
+
+env:
+  # Remplacer les valeurs REPLACE_WITH_* avant le premier rollout.
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://demenagement-local.fr
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_VERTICAL
+    value: demenagement
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: REPLACE_WITH_FIREBASE_WEB_API_KEY
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: REPLACE_WITH_FIREBASE_AUTH_DOMAIN
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: REPLACE_WITH_FIREBASE_PROJECT_ID
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: REPLACE_WITH_FIREBASE_WEB_APP_ID
+    availability: [BUILD, RUNTIME]
+  - variable: FIREBASE_ADMIN_PROJECT_ID
+    value: REPLACE_WITH_FIREBASE_PROJECT_ID
+    availability: [RUNTIME]
+  - variable: STRIPE_SECRET_KEY
+    secret: stripe-secret-key
+    availability: [RUNTIME]
+  - variable: STRIPE_WEBHOOK_SECRET
+    secret: stripe-webhook-secret
+    availability: [RUNTIME]
+  - variable: ADMIN_DISPUTE_WEBHOOK_URL
+    secret: admin-dispute-webhook-url
+    availability: [RUNTIME]
+  # Ces secrets ne sont pas transmis automatiquement aux Cloud Functions.
+  - variable: TWILIO_ACCOUNT_SID
+    secret: twilio-account-sid
+    availability: [RUNTIME]
+  - variable: TWILIO_AUTH_TOKEN
+    secret: twilio-auth-token
+    availability: [RUNTIME]
+  - variable: TWILIO_FROM_NUMBER
+    value: REPLACE_WITH_TWILIO_E164_NUMBER
+    availability: [RUNTIME]
+  - variable: RESEND_API_KEY
+    secret: resend-api-key
+    availability: [RUNTIME]
+  - variable: RESEND_FROM_EMAIL
+    value: REPLACE_WITH_VERIFIED_SENDER_EMAIL
+    availability: [RUNTIME]

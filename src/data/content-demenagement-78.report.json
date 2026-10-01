@@ -1,0 +1,463 @@
+{
+  "generatedAt": "2026-10-01T14:58:28.815Z",
+  "departmentCode": "78",
+  "vertical": "demenagement",
+  "total": 90,
+  "validated": 90,
+  "threshold": 0.25,
+  "maximumSimilarity": 0.24285714285714285,
+  "comparisons": [
+    {
+      "slug": "ablis-78660",
+      "comparedWith": "vaux-sur-seine-78740",
+      "score": 0.20857142857142857
+    },
+    {
+      "slug": "acheres-78260",
+      "comparedWith": "rambouillet-78120",
+      "score": 0.19390581717451524
+    },
+    {
+      "slug": "andresy-78570",
+      "comparedWith": "bonnieres-sur-seine-78270",
+      "score": 0.17027027027027028
+    },
+    {
+      "slug": "aubergenville-78410",
+      "comparedWith": "vaux-sur-seine-78740",
+      "score": 0.15561959654178675
+    },
+    {
+      "slug": "bailly-78870",
+      "comparedWith": "porcheville-78440",
+      "score": 0.17585301837270342
+    },
+    {
+      "slug": "beynes-78650",
+      "comparedWith": "la-verriere-78320",
+      "score": 0.164021164021164
+    },
+    {
+      "slug": "bois-d-arcy-78390",
+      "comparedWith": "mezieres-sur-seine-78970",
+      "score": 0.18055555555555555
+    },
+    {
+      "slug": "bonnieres-sur-seine-78270",
+      "comparedWith": "limay-78520",
+      "score": 0.1806282722513089
+    },
+    {
+      "slug": "bougival-78380",
+      "comparedWith": "gargenville-78440",
+      "score": 0.19113573407202217
+    },
+    {
+      "slug": "buc-78530",
+      "comparedWith": "vaux-sur-seine-78740",
+      "score": 0.2033898305084746
+    },
+    {
+      "slug": "buchelay-78200",
+      "comparedWith": "mantes-la-jolie-78200",
+      "score": 0.20533333333333334
+    },
+    {
+      "slug": "carrieres-sous-poissy-78955",
+      "comparedWith": "mantes-la-jolie-78200",
+      "score": 0.2
+    },
+    {
+      "slug": "carrieres-sur-seine-78420",
+      "comparedWith": "mantes-la-jolie-78200",
+      "score": 0.2288135593220339
+    },
+    {
+      "slug": "chambourcy-78240",
+      "comparedWith": "villiers-saint-frederic-78640",
+      "score": 0.19186046511627908
+    },
+    {
+      "slug": "chanteloup-les-vignes-78570",
+      "comparedWith": "juziers-78820",
+      "score": 0.17866666666666667
+    },
+    {
+      "slug": "chatou-78400",
+      "comparedWith": "saint-germain-en-laye-78100",
+      "score": 0.18181818181818182
+    },
+    {
+      "slug": "chevreuse-78460",
+      "comparedWith": "bonnieres-sur-seine-78270",
+      "score": 0.15632754342431762
+    },
+    {
+      "slug": "coignieres-78310",
+      "comparedWith": "freneuse-78840",
+      "score": 0.21194029850746268
+    },
+    {
+      "slug": "conflans-sainte-honorine-78700",
+      "comparedWith": "mantes-la-ville-78711",
+      "score": 0.15625
+    },
+    {
+      "slug": "croissy-sur-seine-78290",
+      "comparedWith": "carrieres-sous-poissy-78955",
+      "score": 0.17073170731707318
+    },
+    {
+      "slug": "ecquevilly-78920",
+      "comparedWith": "elancourt-78990",
+      "score": 0.17857142857142858
+    },
+    {
+      "slug": "elancourt-78990",
+      "comparedWith": "ecquevilly-78920",
+      "score": 0.17857142857142858
+    },
+    {
+      "slug": "epone-78680",
+      "comparedWith": "le-mesnil-le-roi-78600",
+      "score": 0.1893939393939394
+    },
+    {
+      "slug": "feucherolles-78810",
+      "comparedWith": "velizy-villacoublay-78140",
+      "score": 0.21052631578947367
+    },
+    {
+      "slug": "fontenay-le-fleury-78330",
+      "comparedWith": "le-port-marly-78560",
+      "score": 0.18205128205128204
+    },
+    {
+      "slug": "freneuse-78840",
+      "comparedWith": "coignieres-78310",
+      "score": 0.21194029850746268
+    },
+    {
+      "slug": "gargenville-78440",
+      "comparedWith": "bougival-78380",
+      "score": 0.19113573407202217
+    },
+    {
+      "slug": "guyancourt-78280",
+      "comparedWith": "voisins-le-bretonneux-78960",
+      "score": 0.1386861313868613
+    },
+    {
+      "slug": "houdan-78550",
+      "comparedWith": "aubergenville-78410",
+      "score": 0.1544943820224719
+    },
+    {
+      "slug": "houilles-78800",
+      "comparedWith": "saint-germain-en-laye-78100",
+      "score": 0.18528610354223432
+    },
+    {
+      "slug": "issou-78440",
+      "comparedWith": "meulan-en-yvelines-78250",
+      "score": 0.12634408602150538
+    },
+    {
+      "slug": "jouars-pontchartrain-78760",
+      "comparedWith": "carrieres-sous-poissy-78955",
+      "score": 0.17962466487935658
+    },
+    {
+      "slug": "jouy-en-josas-78350",
+      "comparedWith": "le-vesinet-78110",
+      "score": 0.20977011494252873
+    },
+    {
+      "slug": "juziers-78820",
+      "comparedWith": "chanteloup-les-vignes-78570",
+      "score": 0.17866666666666667
+    },
+    {
+      "slug": "l-etang-la-ville-78620",
+      "comparedWith": "saint-remy-les-chevreuse-78470",
+      "score": 0.17553191489361702
+    },
+    {
+      "slug": "la-celle-saint-cloud-78170",
+      "comparedWith": "magny-les-hameaux-78114",
+      "score": 0.22375690607734808
+    },
+    {
+      "slug": "la-verriere-78320",
+      "comparedWith": "magnanville-78200",
+      "score": 0.2195845697329377
+    },
+    {
+      "slug": "le-chesnay-rocquencourt-78150",
+      "comparedWith": "mantes-la-jolie-78200",
+      "score": 0.20540540540540542
+    },
+    {
+      "slug": "le-mesnil-le-roi-78600",
+      "comparedWith": "epone-78680",
+      "score": 0.1893939393939394
+    },
+    {
+      "slug": "le-mesnil-saint-denis-78320",
+      "comparedWith": "mantes-la-jolie-78200",
+      "score": 0.19346049046321526
+    },
+    {
+      "slug": "le-pecq-78230",
+      "comparedWith": "bonnieres-sur-seine-78270",
+      "score": 0.16176470588235295
+    },
+    {
+      "slug": "le-perray-en-yvelines-78610",
+      "comparedWith": "rambouillet-78120",
+      "score": 0.21937321937321938
+    },
+    {
+      "slug": "le-port-marly-78560",
+      "comparedWith": "fontenay-le-fleury-78330",
+      "score": 0.18205128205128204
+    },
+    {
+      "slug": "le-vesinet-78110",
+      "comparedWith": "jouy-en-josas-78350",
+      "score": 0.20977011494252873
+    },
+    {
+      "slug": "les-clayes-sous-bois-78340",
+      "comparedWith": "voisins-le-bretonneux-78960",
+      "score": 0.22343324250681199
+    },
+    {
+      "slug": "les-essarts-le-roi-78690",
+      "comparedWith": "le-mesnil-le-roi-78600",
+      "score": 0.18204488778054864
+    },
+    {
+      "slug": "les-mureaux-78130",
+      "comparedWith": "limay-78520",
+      "score": 0.2016348773841962
+    },
+    {
+      "slug": "limay-78520",
+      "comparedWith": "les-mureaux-78130",
+      "score": 0.2016348773841962
+    },
+    {
+      "slug": "louveciennes-78430",
+      "comparedWith": "vaux-sur-seine-78740",
+      "score": 0.1763085399449036
+    },
+    {
+      "slug": "magnanville-78200",
+      "comparedWith": "la-verriere-78320",
+      "score": 0.2195845697329377
+    },
+    {
+      "slug": "magny-les-hameaux-78114",
+      "comparedWith": "la-celle-saint-cloud-78170",
+      "score": 0.22375690607734808
+    },
+    {
+      "slug": "maisons-laffitte-78600",
+      "comparedWith": "maule-78580",
+      "score": 0.24285714285714285
+    },
+    {
+      "slug": "mantes-la-jolie-78200",
+      "comparedWith": "carrieres-sur-seine-78420",
+      "score": 0.2288135593220339
+    },
+    {
+      "slug": "mantes-la-ville-78711",
+      "comparedWith": "mantes-la-jolie-78200",
+      "score": 0.22010869565217392
+    },
+    {
+      "slug": "mareil-marly-78750",
+      "comparedWith": "porcheville-78440",
+      "score": 0.21153846153846154
+    },
+    {
+      "slug": "marly-le-roi-78160",
+      "comparedWith": "beynes-78650",
+      "score": 0.1503957783641161
+    },
+    {
+      "slug": "maule-78580",
+      "comparedWith": "maisons-laffitte-78600",
+      "score": 0.24285714285714285
+    },
+    {
+      "slug": "maurecourt-78780",
+      "comparedWith": "voisins-le-bretonneux-78960",
+      "score": 0.17042606516290726
+    },
+    {
+      "slug": "maurepas-78310",
+      "comparedWith": "neauphle-le-chateau-78640",
+      "score": 0.22994652406417113
+    },
+    {
+      "slug": "meulan-en-yvelines-78250",
+      "comparedWith": "saint-germain-en-laye-78100",
+      "score": 0.23493975903614459
+    },
+    {
+      "slug": "mezieres-sur-seine-78970",
+      "comparedWith": "la-celle-saint-cloud-78170",
+      "score": 0.2180232558139535
+    },
+    {
+      "slug": "montesson-78360",
+      "comparedWith": "jouars-pontchartrain-78760",
+      "score": 0.16986301369863013
+    },
+    {
+      "slug": "montigny-le-bretonneux-78180",
+      "comparedWith": "ecquevilly-78920",
+      "score": 0.1650485436893204
+    },
+    {
+      "slug": "morainvilliers-78630",
+      "comparedWith": "epone-78680",
+      "score": 0.17258883248730963
+    },
+    {
+      "slug": "neauphle-le-chateau-78640",
+      "comparedWith": "maurepas-78310",
+      "score": 0.22994652406417113
+    },
+    {
+      "slug": "noisy-le-roi-78590",
+      "comparedWith": "saint-germain-en-laye-78100",
+      "score": 0.15258855585831063
+    },
+    {
+      "slug": "orgeval-78630",
+      "comparedWith": "les-essarts-le-roi-78690",
+      "score": 0.14360313315926893
+    },
+    {
+      "slug": "plaisir-78370",
+      "comparedWith": "le-vesinet-78110",
+      "score": 0.1685082872928177
+    },
+    {
+      "slug": "poissy-78300",
+      "comparedWith": "mantes-la-ville-78711",
+      "score": 0.18508997429305912
+    },
+    {
+      "slug": "porcheville-78440",
+      "comparedWith": "mareil-marly-78750",
+      "score": 0.21153846153846154
+    },
+    {
+      "slug": "rambouillet-78120",
+      "comparedWith": "le-perray-en-yvelines-78610",
+      "score": 0.21937321937321938
+    },
+    {
+      "slug": "rosny-sur-seine-78710",
+      "comparedWith": "mantes-la-jolie-78200",
+      "score": 0.17438692098092642
+    },
+    {
+      "slug": "saint-arnoult-en-yvelines-78730",
+      "comparedWith": "maurepas-78310",
+      "score": 0.1748768472906404
+    },
+    {
+      "slug": "saint-cyr-l-ecole-78210",
+      "comparedWith": "meulan-en-yvelines-78250",
+      "score": 0.2257142857142857
+    },
+    {
+      "slug": "saint-germain-en-laye-78100",
+      "comparedWith": "meulan-en-yvelines-78250",
+      "score": 0.23493975903614459
+    },
+    {
+      "slug": "saint-nom-la-breteche-78860",
+      "comparedWith": "juziers-78820",
+      "score": 0.15053763440860216
+    },
+    {
+      "slug": "saint-remy-les-chevreuse-78470",
+      "comparedWith": "saint-cyr-l-ecole-78210",
+      "score": 0.20526315789473684
+    },
+    {
+      "slug": "sartrouville-78500",
+      "comparedWith": "maule-78580",
+      "score": 0.19444444444444445
+    },
+    {
+      "slug": "trappes-78190",
+      "comparedWith": "la-celle-saint-cloud-78170",
+      "score": 0.17079889807162535
+    },
+    {
+      "slug": "triel-sur-seine-78510",
+      "comparedWith": "meulan-en-yvelines-78250",
+      "score": 0.18333333333333332
+    },
+    {
+      "slug": "vaux-sur-seine-78740",
+      "comparedWith": "ablis-78660",
+      "score": 0.20857142857142857
+    },
+    {
+      "slug": "velizy-villacoublay-78140",
+      "comparedWith": "feucherolles-78810",
+      "score": 0.21052631578947367
+    },
+    {
+      "slug": "verneuil-sur-seine-78480",
+      "comparedWith": "bonnieres-sur-seine-78270",
+      "score": 0.1687041564792176
+    },
+    {
+      "slug": "vernouillet-78540",
+      "comparedWith": "epone-78680",
+      "score": 0.17346938775510204
+    },
+    {
+      "slug": "versailles-78000",
+      "comparedWith": "le-port-marly-78560",
+      "score": 0.1766109785202864
+    },
+    {
+      "slug": "villennes-sur-seine-78670",
+      "comparedWith": "la-celle-saint-cloud-78170",
+      "score": 0.16809116809116809
+    },
+    {
+      "slug": "villepreux-78450",
+      "comparedWith": "jouy-en-josas-78350",
+      "score": 0.16103896103896104
+    },
+    {
+      "slug": "villiers-saint-frederic-78640",
+      "comparedWith": "chambourcy-78240",
+      "score": 0.19186046511627908
+    },
+    {
+      "slug": "viroflay-78220",
+      "comparedWith": "juziers-78820",
+      "score": 0.10858585858585859
+    },
+    {
+      "slug": "voisins-le-bretonneux-78960",
+      "comparedWith": "les-clayes-sous-bois-78340",
+      "score": 0.22343324250681199
+    }
+  ],
+  "rejected": [],
+  "remaining": []
+}

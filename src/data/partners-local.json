@@ -1,0 +1,16 @@
+[
+  {
+    "id": "part-dem-78",
+    "companyName": "Yvelines Express Déménagement",
+    "vertical": "demenagement",
+    "department": "78",
+    "credits": 14
+  },
+  {
+    "id": "part-renov-78",
+    "companyName": "Artisans Rénov 78",
+    "vertical": "renovation",
+    "department": "78",
+    "credits": 7
+  }
+]

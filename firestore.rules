@@ -1,0 +1,115 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function nonEmptyText(value, maxLength) {
+      return value is string && value.size() <= maxLength
+        && value.matches('.*[^\\s].*');
+    }
+
+    function validEmail(value) {
+      return value is string && value.size() <= 254
+        && value.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
+    }
+
+    function validMobile(value) {
+      return value is string && value.matches('^(0|\\+33)[67][0-9]{8}$');
+    }
+
+    function validPostalCode(value) {
+      return value is string && value.matches('^[0-9]{5}$');
+    }
+
+    function validCustomer(customer) {
+      return customer is map
+        && customer.keys().hasAll(['firstName', 'lastName', 'phone', 'email'])
+        && customer.keys().hasOnly(['firstName', 'lastName', 'phone', 'email'])
+        && nonEmptyText(customer.firstName, 100)
+        && nonEmptyText(customer.lastName, 100)
+        && validMobile(customer.phone)
+        && validEmail(customer.email);
+    }
+
+    function validGeo(geo) {
+      return geo is map
+        && geo.keys().hasAll(['departurePostalCode', 'departureCity', 'arrivalPostalCode', 'arrivalCity'])
+        && geo.keys().hasOnly(['departurePostalCode', 'departureCity', 'arrivalPostalCode', 'arrivalCity'])
+        && validPostalCode(geo.departurePostalCode)
+        && validPostalCode(geo.arrivalPostalCode)
+        && nonEmptyText(geo.departureCity, 150)
+        && nonEmptyText(geo.arrivalCity, 150);
+    }
+
+    function validProject(project) {
+      return project is map
+        && project.keys().hasAll(['housingType', 'surface', 'departureFloor', 'arrivalFloor', 'departureElevator', 'arrivalElevator', 'targetDate'])
+        && project.keys().hasOnly(['housingType', 'surface', 'departureFloor', 'arrivalFloor', 'departureElevator', 'arrivalElevator', 'targetDate'])
+        && project.housingType in ['appartement', 'maison', 'bureau']
+        && project.surface is number && project.surface >= 9 && project.surface <= 1000000
+        && project.departureFloor is number && project.departureFloor >= 0 && project.departureFloor <= 1000
+        && project.arrivalFloor is number && project.arrivalFloor >= 0 && project.arrivalFloor <= 1000
+        && project.departureElevator is bool
+        && project.arrivalElevator is bool
+        && nonEmptyText(project.targetDate, 100);
+    }
+
+    function validLeadCreation(data) {
+      // Liste fermée : impossible de préattribuer un partenaire ou d'injecter
+      // assignedAt, un statut final ou tout autre champ réservé au serveur.
+      // Le contrat rénovation actuel sans geo/projectDetails est refusé.
+      return data.keys().hasAll(['customer', 'geo', 'projectDetails', 'vertical', 'status', 'createdAt'])
+        && data.keys().hasOnly(['customer', 'geo', 'projectDetails', 'vertical', 'status', 'createdAt'])
+        && data.vertical == 'demenagement'
+        && data.status == 'pending'
+        && data.createdAt is timestamp && data.createdAt == request.time
+        && validCustomer(data.customer)
+        && validGeo(data.geo)
+        && validProject(data.projectDetails);
+    }
+
+    match /cities/{cityId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /leads/{leadId} {
+      allow create: if validLeadCreation(request.resource.data);
+      // Pour lister : filtrer assignedPartners avec array-contains sur son UID.
+      // assignedPartners est écrit exclusivement par le serveur comme tableau.
+      allow read: if signedIn()
+        && request.auth.uid in resource.data.assignedPartners;
+      allow update, delete: if false;
+    }
+
+    function validPartnerUpdate() {
+      let changed = request.resource.data.diff(resource.data).affectedKeys();
+      // Une liste positive protège aussi isActive, vertical, assignedDepartments
+      // et les futurs champs serveur, ainsi que les ajouts/suppressions de credits.
+      return changed.hasOnly(['displayName', 'email', 'phone'])
+        && (!changed.hasAny(['displayName']) || nonEmptyText(request.resource.data.displayName, 150))
+        && (!changed.hasAny(['email']) || validEmail(request.resource.data.email))
+        && (!changed.hasAny(['phone']) || validMobile(request.resource.data.phone));
+    }
+
+    // Convention impérative : partners/{partnerId} utilise l'UID Firebase Auth.
+    match /partners/{partnerId} {
+      allow read: if signedIn() && request.auth.uid == partnerId;
+      allow update: if signedIn() && request.auth.uid == partnerId && validPartnerUpdate();
+      allow create, delete: if false;
+    }
+
+    match /transactions/{transactionId} {
+      allow read: if signedIn() && resource.data.partnerId == request.auth.uid;
+      allow write: if false;
+    }
+
+    // Les sous-collections et toute collection non déclarée restent privées.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
