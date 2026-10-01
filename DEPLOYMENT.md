@@ -1,5 +1,34 @@
 # Déploiement Firebase App Hosting
 
+## Premier déploiement sans paiements ni notifications
+
+Le fichier `apphosting.yaml` ne référence actuellement aucun secret Stripe,
+Twilio, Resend ou webhook administrateur. Leur absence ne bloque donc plus la
+préparation du build. Les paiements et alertes restent indisponibles tant que ces
+intégrations ne sont pas configurées ; aucun faux secret ne doit être créé.
+
+Les variables Firebase publiques et l’URL du site restent à renseigner avant la
+mise en service. Les éventuelles références à des secrets configurées directement
+dans la console App Hosting doivent également être retirées pour ce mode provisoire.
+
+Pour réactiver les intégrations, provisionner les secrets et leurs accès comme
+indiqué plus bas, puis ajouter uniquement les entrées nécessaires sous `env` :
+
+```yaml
+  - variable: STRIPE_SECRET_KEY
+    secret: stripe-secret-key
+    availability: [RUNTIME]
+  - variable: STRIPE_WEBHOOK_SECRET
+    secret: stripe-webhook-secret
+    availability: [RUNTIME]
+  - variable: ADMIN_DISPUTE_WEBHOOK_URL
+    secret: admin-dispute-webhook-url
+    availability: [RUNTIME]
+```
+
+Les secrets Twilio et Resend sont à configurer dans le codebase Cloud Functions
+qui envoie les notifications, indépendamment du déploiement Next.js.
+
 ## Configuration et ressources
 
 Utiliser Node.js 22 et un projet Firebase avec facturation Blaze. Le fichier
@@ -44,6 +73,8 @@ et valider les parcours sur les deux domaines avant de les ouvrir au public.
 
 ## Provisionner les secrets
 
+Cette étape est reportée pour le premier déploiement sans intégrations externes.
+
 Avec Firebase CLI authentifiée, créer chaque secret via une saisie interactive
 (ne pas écrire sa valeur dans le dépôt ou dans une commande conservée en historique) :
 
@@ -77,8 +108,8 @@ Les variables `FIREBASE_ADMIN_CLIENT_EMAIL` et `FIREBASE_ADMIN_PRIVATE_KEY` du f
 ### Cloud Functions de notification
 
 `functions/src/services/notifications.ts` s'exécute dans une Cloud Function séparée.
-Les variables d'App Hosting ne lui sont **pas** transmises. Les entrées Twilio/Resend
-du YAML préparent uniquement l'environnement App Hosting.
+Les variables d'App Hosting ne lui sont **pas** transmises. Il n’y a donc pas
+d’entrée Twilio/Resend dans le YAML App Hosting provisoire.
 
 Avant de déployer les notifications, configurer les mêmes secrets dans le projet
 Functions et les lier explicitement au trigger v2 via son option `secrets`, avec les

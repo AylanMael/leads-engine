@@ -29,28 +29,7 @@ env:
   - variable: FIREBASE_ADMIN_PROJECT_ID
     value: REPLACE_WITH_FIREBASE_PROJECT_ID
     availability: [RUNTIME]
-  - variable: STRIPE_SECRET_KEY
-    secret: stripe-secret-key
-    availability: [RUNTIME]
-  - variable: STRIPE_WEBHOOK_SECRET
-    secret: stripe-webhook-secret
-    availability: [RUNTIME]
-  - variable: ADMIN_DISPUTE_WEBHOOK_URL
-    secret: admin-dispute-webhook-url
-    availability: [RUNTIME]
-  # Ces secrets ne sont pas transmis automatiquement aux Cloud Functions.
-  - variable: TWILIO_ACCOUNT_SID
-    secret: twilio-account-sid
-    availability: [RUNTIME]
-  - variable: TWILIO_AUTH_TOKEN
-    secret: twilio-auth-token
-    availability: [RUNTIME]
-  - variable: TWILIO_FROM_NUMBER
-    value: REPLACE_WITH_TWILIO_E164_NUMBER
-    availability: [RUNTIME]
-  - variable: RESEND_API_KEY
-    secret: resend-api-key
-    availability: [RUNTIME]
-  - variable: RESEND_FROM_EMAIL
-    value: REPLACE_WITH_VERIFIED_SENDER_EMAIL
-    availability: [RUNTIME]
+
+# Premier déploiement sans Stripe ni notifications : aucun secret externe requis.
+# Réactiver les intégrations après provisionnement des secrets et de leurs accès.
+# Voir DEPLOYMENT.md. Les Cloud Functions ont leur propre configuration.
