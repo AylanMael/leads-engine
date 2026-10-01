@@ -15,19 +15,19 @@ env:
     value: demenagement
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-    value: REPLACE_WITH_FIREBASE_WEB_API_KEY
+    value: AIzaSyBw1I4H_XLBvND5_WnLWQ15tGBwxeIOeNU
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-    value: REPLACE_WITH_FIREBASE_AUTH_DOMAIN
+    value: leads-engine-7067b.firebaseapp.com
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
-    value: REPLACE_WITH_FIREBASE_PROJECT_ID
+    value: leads-engine-7067b
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_FIREBASE_APP_ID
-    value: REPLACE_WITH_FIREBASE_WEB_APP_ID
+    value: 1:128826641052:web:a2e5e9e6add50f359bbb59
     availability: [BUILD, RUNTIME]
   - variable: FIREBASE_ADMIN_PROJECT_ID
-    value: REPLACE_WITH_FIREBASE_PROJECT_ID
+    value: leads-engine-7067b
     availability: [RUNTIME]
 
 # Premier déploiement sans Stripe ni notifications : aucun secret externe requis.

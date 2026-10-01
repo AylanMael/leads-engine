@@ -24,10 +24,11 @@ service cloud.firestore {
       return value is string && value.matches('^[0-9]{5}$');
     }
 
-    function validCustomer(customer) {
+    function validCustomer(customer, renovation) {
       return customer is map
         && customer.keys().hasAll(['firstName', 'lastName', 'phone', 'email'])
-        && customer.keys().hasOnly(['firstName', 'lastName', 'phone', 'email'])
+        && customer.keys().hasOnly(renovation ? ['firstName', 'lastName', 'phone', 'email', 'salutation'] : ['firstName', 'lastName', 'phone', 'email'])
+        && (!renovation || customer.salutation in ['madame', 'monsieur'])
         && nonEmptyText(customer.firstName, 100)
         && nonEmptyText(customer.lastName, 100)
         && validMobile(customer.phone)
@@ -57,18 +58,39 @@ service cloud.firestore {
         && nonEmptyText(project.targetDate, 100);
     }
 
-    function validLeadCreation(data) {
+    function validMovingLead(data) {
       // Liste fermée : impossible de préattribuer un partenaire ou d'injecter
       // assignedAt, un statut final ou tout autre champ réservé au serveur.
-      // Le contrat rénovation actuel sans geo/projectDetails est refusé.
       return data.keys().hasAll(['customer', 'geo', 'projectDetails', 'vertical', 'status', 'createdAt'])
         && data.keys().hasOnly(['customer', 'geo', 'projectDetails', 'vertical', 'status', 'createdAt'])
         && data.vertical == 'demenagement'
         && data.status == 'pending'
         && data.createdAt is timestamp && data.createdAt == request.time
-        && validCustomer(data.customer)
+        && validCustomer(data.customer, false)
         && validGeo(data.geo)
         && validProject(data.projectDetails);
+    }
+
+    function validRenovationLead(data) {
+      return data.keys().hasAll(['vertical', 'geo', 'projectType', 'property', 'budgetBracket', 'customer', 'status', 'createdAt'])
+        && data.keys().hasOnly(['vertical', 'geo', 'projectType', 'property', 'budgetBracket', 'customer', 'status', 'createdAt'])
+        && data.vertical == 'renovation'
+        && data.status == 'pending'
+        && data.createdAt is timestamp && data.createdAt == request.time
+        && validCustomer(data.customer, true)
+        && data.geo is map
+        && data.geo.keys().hasAll(['departureCity', 'departurePostalCode'])
+        && data.geo.keys().hasOnly(['departureCity', 'departurePostalCode'])
+        && nonEmptyText(data.geo.departureCity, 150)
+        && validPostalCode(data.geo.departurePostalCode)
+        && data.projectType in ['globale', 'salle-de-bain', 'cuisine', 'menuiserie', 'isolation']
+        && data.budgetBracket in ['< 10k', '10k-30k', '30k-60k', '> 60k']
+        && data.property is map
+        && data.property.keys().hasAll(['occupancyStatus', 'surface', 'buildingType'])
+        && data.property.keys().hasOnly(['occupancyStatus', 'surface', 'buildingType'])
+        && data.property.occupancyStatus in ['proprietaire_occupant', 'proprietaire_bailleur', 'futur_acquereur']
+        && data.property.buildingType in ['maison', 'appartement']
+        && data.property.surface is number && data.property.surface > 0 && data.property.surface <= 1000000;
     }
 
     match /cities/{cityId} {
@@ -77,7 +99,7 @@ service cloud.firestore {
     }
 
     match /leads/{leadId} {
-      allow create: if validLeadCreation(request.resource.data);
+      allow create: if validMovingLead(request.resource.data) || validRenovationLead(request.resource.data);
       // Pour lister : filtrer assignedPartners avec array-contains sur son UID.
       // assignedPartners est écrit exclusivement par le serveur comme tableau.
       allow read: if signedIn()

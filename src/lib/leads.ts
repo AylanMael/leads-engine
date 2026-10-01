@@ -18,6 +18,9 @@ export async function saveLead(
   try {
     const db = getLeadFirestore();
     if (!db) {
+      if (process.env.NODE_ENV !== "development") {
+        return { success: false, error: "Le service de demandes est temporairement indisponible." };
+      }
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -28,6 +31,10 @@ export async function saveLead(
         return { success: false, error: "Votre demande n’a pas pu être enregistrée localement. Veuillez réessayer." };
       }
       return { success: true, id: result.id };
+    }
+
+    if (parsed.data.vertical === "renovation" && !parsed.data.geo) {
+      return { success: false, error: "Renseignez la commune et le code postal du chantier." };
     }
 
     // Firestore peut laisser une écriture hors ligne en attente indéfiniment.

@@ -15,7 +15,9 @@ const firebaseConfig: FirebaseOptions = {
 /** Les placeholders locaux ne doivent pas activer une connexion Firebase réelle. */
 export const isFirebaseConfigured = Boolean(
   firebaseConfig.apiKey && firebaseConfig.apiKey !== "mock-api-key" &&
-  firebaseConfig.projectId && firebaseConfig.appId,
+  !firebaseConfig.apiKey.startsWith("REPLACE_WITH_") &&
+  firebaseConfig.projectId && !firebaseConfig.projectId.startsWith("REPLACE_WITH_") &&
+  firebaseConfig.appId && !firebaseConfig.appId.startsWith("REPLACE_WITH_"),
 );
 
 /** Initialisation différée et idempotente, y compris après un rechargement en dev. */
