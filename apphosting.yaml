@@ -30,6 +30,10 @@ env:
     value: leads-engine-7067b
     availability: [RUNTIME]
 
-# Premier déploiement sans Stripe ni notifications : aucun secret externe requis.
+  - variable: ADMIN_EMAILS
+    value: contact@vsw-digital.fr
+    availability: [RUNTIME]
+
+  # Premier déploiement sans Stripe ni notifications : aucun secret externe requis.
 # Réactiver les intégrations après provisionnement des secrets et de leurs accès.
 # Voir DEPLOYMENT.md. Les Cloud Functions ont leur propre configuration.
