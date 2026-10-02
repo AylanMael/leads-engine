@@ -1,3 +1,4 @@
+import { getSiteConfig, getCanonicalUrl, getOrganization } from "../config/site";
 import type { City } from "../types/city";
 
 type CityJsonLdProps = {
@@ -7,11 +8,19 @@ type CityJsonLdProps = {
 
 /** Données structurées rendues côté serveur, à partir du contenu de la page. */
 export default function CityJsonLd({ city, vertical = "demenagement" }: CityJsonLdProps) {
+  const site = getSiteConfig(vertical);
+  const canonical = getCanonicalUrl(site, city.slug);
+  const organization = getOrganization(site);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      organization,
       {
         "@type": "Service",
+        "@id": `${canonical}#service`,
+        url: canonical,
+        provider: { "@id": organization["@id"] },
+        brand: { "@type": "Brand", name: site.brandName, url: site.domain },
         name: `${vertical === "renovation" ? "Rénovation de l’habitat" : "Déménagement"} à ${city.name}`,
         serviceType: vertical === "renovation" ? "Rénovation de l’habitat" : "Déménagement de particuliers et entreprises",
         areaServed: {
@@ -28,6 +37,8 @@ export default function CityJsonLd({ city, vertical = "demenagement" }: CityJson
       },
       ...(city.faq.length ? [{
         "@type": "FAQPage",
+        "@id": `${canonical}#faq`,
+        url: canonical,
         mainEntity: city.faq.map(({ question, answer }) => ({
           "@type": "Question",
           name: question,

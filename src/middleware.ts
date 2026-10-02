@@ -1,8 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { resolveVerticalFromHost } from "./config/tenant";
+import { getSiteConfig } from "./config/site";
 
 export function middleware(request: NextRequest) {
-  const vertical = resolveVerticalFromHost(request.headers.get("host"));
+  const vertical = getSiteConfig().vertical;
   const requestHeaders = new Headers(request.headers);
   // Remplace toute valeur fournie par le visiteur. En-tête de requête interne,
   // pas un en-tête de réponse ni une autorisation d'accès aux données.

@@ -1,15 +1,17 @@
+import { getSiteConfig } from "../config/site";
 import type { ReactNode } from "react";
 import { Check, MapPin, ArrowDownRight } from "lucide-react";
 import type { City } from "../types/city";
 import type { TenantConfig } from "../config/tenant";
 
 export default function LocalHero({ city, vertical, children }: { city?: City; vertical: TenantConfig["vertical"]; children: ReactNode }) {
+  const site = getSiteConfig(vertical);
   const renovation = vertical === "renovation";
   return <section className="relative mx-auto grid max-w-7xl items-start gap-10 px-4 pb-14 pt-9 sm:px-8 sm:py-16 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-20">
     <div className="min-w-0 lg:pt-7">
       <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold tracking-wide text-emerald-900"><MapPin size={14} aria-hidden="true" />{city ? `${city.name} · ${city.postalCode}` : "Yvelines · 78"}</p>
       <h1 className="max-w-xl text-[2.25rem] font-semibold leading-[1.12] tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-[3.5rem]">
-        {city ? <>Trouvez {renovation ? "votre artisan" : "votre déménageur"}<span className="block text-emerald-800">à {city.name}.</span><span className="mt-3 block text-lg font-medium tracking-normal text-slate-500">{city.postalCode} · Yvelines</span></> : <>{renovation ? "Vos travaux méritent" : "Déménagez avec"}<span className="block text-emerald-800">le bon professionnel.</span></>}
+        {city ? <>Trouvez {renovation ? "votre artisan" : "votre déménageur"}<span className="block text-emerald-800">à {city.name}.</span><span className="mt-3 block text-lg font-medium tracking-normal text-slate-500">{city.postalCode} · Yvelines</span></> : <span className="text-emerald-800">{site.tagline}</span>}
       </h1>
       <p className="mt-6 max-w-lg text-base leading-7 text-slate-600 sm:text-lg">{renovation ? "Un projet de rénovation" : "Un déménagement"}, une seule demande. Échangez avec jusqu’à <strong className="font-semibold text-slate-900">2 professionnels locaux</strong> et choisissez sereinement, sans multiplier les appels.</p>
       <ul className="mt-7 space-y-3 text-sm font-medium text-slate-700">

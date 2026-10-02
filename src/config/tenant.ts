@@ -1,3 +1,5 @@
+import { getSiteConfig } from "./site";
+
 /** Identité, styles et textes partagés par les composants d'une marque. */
 export type TenantConfig = {
   readonly vertical: "demenagement" | "renovation";
@@ -19,9 +21,6 @@ export type TenantConfig = {
 const TENANTS = {
   demenagement: {
     vertical: "demenagement",
-    brandName: "Déménageurs de France",
-    // À remplacer par la raison sociale réelle de l'apporteur d'affaires.
-    legalEntity: "Raison sociale à renseigner",
     theme: {
       accent: "text-teal-800",
       button: "bg-teal-700 text-white hover:bg-teal-800 focus-visible:ring-teal-700",
@@ -35,9 +34,6 @@ const TENANTS = {
   },
   renovation: {
     vertical: "renovation",
-    brandName: "Artisans Rénov",
-    // À remplacer par la raison sociale réelle de l'apporteur d'affaires.
-    legalEntity: "Raison sociale à renseigner",
     theme: {
       accent: "text-emerald-800",
       button: "bg-emerald-800 text-white hover:bg-emerald-900 focus-visible:ring-emerald-700",
@@ -49,18 +45,20 @@ const TENANTS = {
       matchingPromise: "Un artisan local vous contacte sous 24h pour échanger sur vos travaux.",
     },
   },
-} as const satisfies Record<TenantConfig["vertical"], TenantConfig>;
+} as const satisfies Record<TenantConfig["vertical"], Omit<TenantConfig, "brandName" | "legalEntity">>;
 
 /** Résolution pure partagée ; passer la marque de la requête en multi-domaines. */
 export function getTenantConfig(vertical: string | null | undefined = process.env.NEXT_PUBLIC_VERTICAL): TenantConfig {
-  return vertical === "renovation" ? TENANTS.renovation : TENANTS.demenagement;
+  const site = getSiteConfig(vertical);
+  const tenant = TENANTS[site.vertical];
+  return { ...tenant, brandName: site.brandName, legalEntity: site.legalName, labels: { ...tenant.labels, mainTitle: site.tagline, tagline: site.description } };
 }
 
 /** Domaine exact ou sous-domaine délimité, jamais une simple sous-chaîne. */
 export function resolveVerticalFromHost(host: string | null): TenantConfig["vertical"] {
   const hostname = (host ?? "").trim().toLowerCase().replace(/:\d+$/, "").replace(/\.$/, "");
-  if (hostname === "renovation-habitat.fr" || hostname.endsWith(".renovation-habitat.fr") || hostname === "renovation.localhost") return "renovation";
-  if (hostname === "demenagement-local.fr" || hostname.endsWith(".demenagement-local.fr") || hostname === "demenagement.localhost") return "demenagement";
+  if (hostname === "renovizo.fr" || hostname.endsWith(".renovizo.fr") || hostname === "renovation-habitat.fr" || hostname.endsWith(".renovation-habitat.fr") || hostname === "renovation.localhost") return "renovation";
+  if (hostname === "demenizo.fr" || hostname.endsWith(".demenizo.fr") || hostname === "demenagement-local.fr" || hostname.endsWith(".demenagement-local.fr") || hostname === "demenagement.localhost") return "demenagement";
   if (hostname === "localhost" || hostname.endsWith(".localhost") || hostname === "127.0.0.1" || hostname === "[::1]") return getTenantConfig().vertical;
   return "demenagement";
 }

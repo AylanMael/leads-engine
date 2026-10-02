@@ -1,12 +1,7 @@
 import "server-only";
-import { headers } from "next/headers";
-import { getTenantConfig, resolveVerticalFromHost } from "../config/tenant";
+import { getTenantConfig } from "../config/tenant";
 
-/** Lecture par requête : aucune variable globale mutable entre les domaines. */
+/** Même marque sur le serveur et le client, définie au build. */
 export async function getServerTenantConfig() {
-  const requestHeaders = await headers();
-  const vertical = requestHeaders.get("x-vertical");
-  return getTenantConfig(vertical === "renovation" || vertical === "demenagement"
-    ? vertical
-    : resolveVerticalFromHost(requestHeaders.get("host")));
+  return getTenantConfig();
 }

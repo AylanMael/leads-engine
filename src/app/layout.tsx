@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getSiteConfig, getSiteMetadata } from "../config/site";
 import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { getServerTenantConfig } from "../lib/tenant-server";
@@ -12,11 +13,7 @@ const inter = Inter({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const tenant = await getServerTenantConfig();
-  return {
-    title: tenant.vertical === "renovation" ? "Artisans Rénov | Devis de rénovation locaux" : "Comparateur Déménagement Local | Devis Vérifiés",
-    description: tenant.labels.tagline,
-  };
+  return getSiteMetadata(getSiteConfig());
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
