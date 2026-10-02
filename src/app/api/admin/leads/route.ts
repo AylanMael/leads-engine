@@ -33,6 +33,7 @@ export async function GET(request: Request) {
         const data = document.data();
         return { id: document.id, companyName: data.companyName ?? data.displayName ?? document.id,
           vertical: data.vertical, credits: data.credits ?? 0, isActive: data.isActive === true,
+          assignedDepartments: data.assignedDepartments ?? [], email: data.email ?? "",
           department: data.department ?? data.assignedDepartments?.[0] ?? "" };
       }),
     });

@@ -36,8 +36,9 @@ export async function refundDispute(db: Firestore, partnerId: string, input: Dis
       // Rejouer une réponse perdue reste sans effet, même après les 48 h.
       return { refundId, alreadyRefunded: true };
     }
-    if (!(lead.assignedAt instanceof Timestamp)) throw new DisputeError(409, "Date d’attribution indisponible.");
-    const age = now() - lead.assignedAt.toMillis();
+    const assignedAt = lead.partnerAssignedAt?.[partnerId] ?? lead.assignedAt;
+    if (!(assignedAt instanceof Timestamp)) throw new DisputeError(409, "Date d’attribution indisponible.");
+    const age = now() - assignedAt.toMillis();
     if (age < 0) throw new DisputeError(409, "Date d’attribution incohérente.");
     if (age >= DISPUTE_WINDOW_MS) throw new DisputeError(409, "Le délai de contestation de 48 heures est dépassé.");
     if (!["assigned", "disputed"].includes(lead.status) || lead.disputedPartners?.includes(partnerId)) {

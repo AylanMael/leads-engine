@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import type { DecodedIdToken } from "firebase-admin/auth";
 import { isAdministrator } from "../src/lib/admin-access";
 import { GET } from "../src/app/api/admin/leads/route";
+import { POST as createPartner } from "../src/app/api/admin/partners/route";
+import { POST as assignPartner } from "../src/app/api/admin/leads/assign/route";
 
 async function main() {
 const identity = { email: "admin@example.com", email_verified: true } as DecodedIdToken;
@@ -21,5 +23,9 @@ for (const authorization of [null, "Basic fake", "Bearer "]) {
   assert.equal("leads" in await response.json(), false);
 }
 console.log("Admin: comptes non autorisés/non vérifiés refusés ; API anonyme privée (401).");
+for (const action of [createPartner, assignPartner]) {
+  const response = await action(new Request("http://localhost/api/admin/action", { method: "POST", body: "{}" }));
+  assert.equal(response.status, 401);
+}
 }
 main().catch((error) => { console.error(error); process.exitCode = 1; });

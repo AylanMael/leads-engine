@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { collection, doc, onSnapshot, orderBy, query, Timestamp, where, type DocumentData } from "firebase/firestore";
+import { collection, doc, onSnapshot, query, Timestamp, where, type DocumentData } from "firebase/firestore";
 import { getLeadFirestore, getPartnerAuth, isFirebaseConfigured } from "../../lib/firebase";
 import LocalPartnerDashboard from "../../components/LocalPartnerDashboard";
 import CreditRecharge from "../../components/CreditRecharge";
@@ -66,8 +66,13 @@ function FirebasePartnerPage() {
           if (!subscribed) {
             subscribed = true;
             setError(null);
-            stopLeads = onSnapshot(query(collection(db, "leads"), where("assignedPartners", "array-contains", user.uid), orderBy("assignedAt", "desc")), (results) => {
-              if (active) setLeads(results.docs.map((item) => ({ id: item.id, data: item.data() })));
+            stopLeads = onSnapshot(query(collection(db, "leads"), where("assignedPartners", "array-contains", user.uid)), (results) => {
+              const receivedAt = (data: DocumentData) => {
+                const date = data.partnerAssignedAt?.[user.uid] ?? data.assignedAt;
+                return date instanceof Timestamp ? date.toMillis() : 0;
+              };
+              if (active) setLeads(results.docs.map((item) => ({ id: item.id, data: item.data() }))
+                .sort((a, b) => receivedAt(b.data) - receivedAt(a.data)));
             }, () => {
               if (active) { setLeads(null); setError("Impossible de charger les demandes. Rechargez la page pour réessayer."); }
             });
@@ -126,7 +131,8 @@ function FirebasePartnerPage() {
               const geo = data.geo ?? {};
               const customer = data.customer ?? {};
               const phone = telephone(customer.phone);
-              const date = data.assignedAt instanceof Timestamp ? data.assignedAt.toDate() : null;
+              const receivedAt = data.partnerAssignedAt?.[partnerId ?? ""] ?? data.assignedAt;
+              const date = receivedAt instanceof Timestamp ? receivedAt.toDate() : null;
               const details = renovation
                 ? [["Travaux", value(data.projectType)], ["Bâti", value(project.buildingType)], ["Budget", value(data.budgetBracket)], ["Statut", value(project.occupancyStatus)]]
                 : [["Destination", `${value(geo.arrivalCity)} (${value(geo.arrivalPostalCode)})`], ["Logement", value(project.housingType)], ["Étages départ / arrivée", `${value(project.departureFloor)} / ${value(project.arrivalFloor)}`], ["Ascenseurs départ / arrivée", `${yesNo(project.departureElevator)} / ${yesNo(project.arrivalElevator)}`], ["Date souhaitée", value(project.targetDate)]];

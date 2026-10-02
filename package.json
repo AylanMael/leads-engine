@@ -11,6 +11,7 @@
     "check:deploy": "npm run audit:vitals",
     "test:disputes": "node --conditions=react-server --import tsx scripts/disputes.test.ts",
     "test:admin": "node --conditions=react-server --import tsx scripts/admin-access.test.ts",
+    "test:assignment": "node --conditions=react-server --import tsx scripts/assignment.test.ts",
     "start": "next start"
   },
   "dependencies": {

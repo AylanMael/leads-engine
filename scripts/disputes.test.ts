@@ -107,6 +107,19 @@ test("partenaire non assigné et absence de débit : aucun remboursement", async
   assert.equal(fixture.get("partners/p1")?.credits, 5);
 });
 
+test("une seconde attribution ne prolonge pas le délai du premier partenaire", async () => {
+  const fixture = database();
+  fixture.set("leads/lead-1", { ...fixture.get("leads/lead-1"),
+    assignedAt: Timestamp.fromMillis(now - DISPUTE_WINDOW_MS - 1),
+    partnerAssignedAt: { p2: Timestamp.fromMillis(now - 1000) },
+  });
+  await assert.rejects(refundDispute(fixture.db, "p1", input, () => now),
+    (error: unknown) => error instanceof DisputeError && error.status === 409);
+  await refundDispute(fixture.db, "p2", input, () => now);
+  assert.equal(fixture.get("partners/p1")?.credits, 5);
+  assert.equal(fixture.get("partners/p2")?.credits, 6);
+});
+
 test("appels concurrents, callback rejoué et répétition après expiration : un seul crédit", async () => {
   const fixture = database();
   const results = await Promise.all(Array.from({ length: 5 }, () => refundDispute(fixture.db, "p1", input, () => now)));

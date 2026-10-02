@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { getPartnerAuth, isFirebaseConfigured } from "../../lib/firebase";
 import type { LocalLead, LocalPartner } from "../../types/local-lead";
+import AdminPartners, { type AdminPartner } from "../../components/AdminPartners";
 
 type WithFirestoreStatus<T> = T extends unknown ? Omit<T, "status"> & { status: string } : never;
 type AdminLead = WithFirestoreStatus<LocalLead>;
@@ -12,7 +13,8 @@ const statusLabels: Record<string, string> = { pending: "En attente", assigned: 
 
 export default function AdminPage() {
   const [leads, setLeads] = useState<AdminLead[]>([]);
-  const [partners, setPartners] = useState<(LocalPartner & { isActive?: boolean })[]>([]);
+  const [partners, setPartners] = useState<AdminPartner[]>([]);
+  const [selectedPartners, setSelectedPartners] = useState<Record<string, string>>({});
   const [signedIn, setSignedIn] = useState(false);
   const [authReady, setAuthReady] = useState(localMode);
   const [connecting, setConnecting] = useState(false);
@@ -75,15 +77,28 @@ export default function AdminPage() {
     return partners.find((partner) => partner.vertical === lead.vertical && partner.department === lead.geo?.departurePostalCode.slice(0, 2));
   }
 
+  function eligiblePartners(lead: AdminLead) {
+    return partners.filter((partner) => partner.isActive && partner.credits >= 1 && partner.vertical === lead.vertical
+      && partner.assignedDepartments?.includes(lead.geo?.departurePostalCode.slice(0, 2) ?? "")
+      && !lead.assignedPartners?.includes(partner.id));
+  }
+
   async function assign(lead: AdminLead) {
-    if (!localMode) return;
-    const partner = eligiblePartner(lead);
+    const candidates = eligiblePartners(lead);
+    const partner = localMode ? eligiblePartner(lead)
+      : candidates.find((item) => item.id === selectedPartners[lead.id]) ?? candidates[0];
     if (!partner || assignmentPending.current) return;
     assignmentPending.current = true;
     setAssigning(lead.id);
     setError(null);
     try {
-      const response = await fetch("/api/leads/assign", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ leadId: lead.id, partnerId: partner.id }) });
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (!localMode) {
+        const user = getPartnerAuth()?.currentUser;
+        if (!user) throw new Error("Session administrateur requise.");
+        headers.Authorization = `Bearer ${await user.getIdToken()}`;
+      }
+      const response = await fetch(localMode ? "/api/leads/assign" : "/api/admin/leads/assign", { method: "POST", headers, body: JSON.stringify({ leadId: lead.id, partnerId: partner.id }) });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? "Attribution impossible.");
       await loadLeads();
@@ -137,6 +152,7 @@ export default function AdminPage() {
           </div>
         ))}
       </dl>
+      {!localMode && <AdminPartners partners={partners} onCreated={loadLeads} />}
       <section className="mt-10" aria-labelledby="leads-heading" aria-busy={loading}>
         <div className="mb-4 flex items-center justify-between gap-4">
           <h2 id="leads-heading" className="text-xl font-semibold text-slate-950">Leads reçus</h2>
@@ -171,6 +187,21 @@ export default function AdminPage() {
                   <td className="whitespace-nowrap px-4 py-3">{lead.vertical === "demenagement" ? lead.projectDetails.surface : lead.property.surface} m²</td>
                   <td className="px-4 py-3"><span className={`whitespace-nowrap rounded-full px-2 py-1 text-xs font-medium ${lead.status === "assigned" ? "bg-teal-50 text-teal-900" : "bg-amber-50 text-amber-900"}`}>{statusLabels[lead.status] ?? lead.status}</span></td>
                   <td className="px-4 py-3">
+                    {!localMode && <>
+                      <p>{(lead.assignedPartners ?? []).map((id) => partners.find((partner) => partner.id === id)?.companyName ?? id).join(", ") || "Aucun partenaire attribué"}</p>
+                      {["pending", "unassigned", "assigned"].includes(lead.status) && (lead.assignedPartners?.length ?? 0) < 2 && <div className="mt-2 space-y-2">
+                        {eligiblePartners(lead).length ? <>
+                          <select aria-label={`Partenaire pour ${lead.customer.firstName} ${lead.customer.lastName}`} disabled={loading || assigning !== null}
+                            value={eligiblePartners(lead).some((partner) => partner.id === selectedPartners[lead.id]) ? selectedPartners[lead.id] : eligiblePartners(lead)[0]?.id}
+                            onChange={(event) => setSelectedPartners((current) => ({ ...current, [lead.id]: event.target.value }))}
+                            className="w-full rounded-lg border border-slate-400 p-2 focus:ring-2 focus:ring-teal-700">
+                            {eligiblePartners(lead).map((partner) => <option key={partner.id} value={partner.id}>{partner.companyName} ({partner.credits} crédits)</option>)}
+                          </select>
+                          <button type="button" disabled={loading || assigning !== null} onClick={() => void assign(lead)} className="rounded-lg bg-teal-800 px-3 py-2 text-white focus:ring-2 focus:ring-teal-600 disabled:opacity-50">{assigning === lead.id ? "Attribution…" : "Attribuer · 1 crédit"}</button>
+                        </> : <p className="text-xs text-slate-600">Aucun partenaire actif compatible avec des crédits.</p>}
+                      </div>}
+                    </>}
+                    {localMode && <>
                     {lead.status === "pending" && localMode ? (
                       <>
                         <button type="button" disabled={loading || assigning !== null || !eligiblePartner(lead) || (eligiblePartner(lead)?.credits ?? 0) < 1} onClick={() => void assign(lead)} className="rounded-lg border border-teal-700 px-3 py-2 text-sm font-semibold text-teal-900 focus-visible:ring-2 focus-visible:ring-teal-600 disabled:opacity-50">{assigning === lead.id ? "Attribution…" : "Attribuer au partenaire local"}</button>
@@ -178,6 +209,7 @@ export default function AdminPage() {
                         {eligiblePartner(lead)?.credits === 0 && <p className="mt-1 text-xs text-slate-600">Solde épuisé : rechargez dans l’espace partenaire.</p>}
                       </>
                     ) : (lead.assignedPartners ?? []).map((id) => partners.find((partner) => partner.id === id)?.companyName ?? id).join(", ") || "En attente d’attribution"}
+                    </>}
                   </td>
                 </tr>
               ))}
