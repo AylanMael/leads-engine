@@ -16,6 +16,7 @@ functions/lib/
 indexing-report.json
 indexing-report.json.tmp
 partners-to-contact-*.csv
+data/prospection/
 partners-to-contact-*.csv.*.tmp
 src/data/leads-local.json
 src/data/leads-local.json.tmp

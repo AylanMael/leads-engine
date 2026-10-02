@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Node.js 22 : node scripts/extract-pros-sirene.mjs 78 4942Z
 // Documentation : https://recherche-entreprises.api.gouv.fr/docs/
-import { writeFile, rename, unlink } from "node:fs/promises";
+import { mkdir, writeFile, rename, unlink } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { randomUUID } from "node:crypto";
@@ -10,7 +10,6 @@ import { normalizeDepartment } from "./fetch-department-cities.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const API = "https://recherche-entreprises.api.gouv.fr/search";
-export const EMPLOYEE_BRACKETS = ["01", "02", "03", "11", "12", "21", "22", "31", "32", "41", "42", "51", "52", "53"];
 const text = (value) => typeof value === "string" ? value.trim() : "";
 
 export function normalizeNaf(value) {
@@ -32,13 +31,18 @@ export function establishmentDepartment(establishment) {
 }
 
 function directors(company) {
-  return [...new Set((Array.isArray(company.dirigeants) ? company.dirigeants : []).flatMap((person) => {
+  // L'API ne désigne pas de dirigeant « principal » : priorité au président,
+  // puis au gérant et au directeur général, sinon au premier dirigeant publié.
+  const rank = (person) => /pr[ée]sident/i.test(text(person.qualite)) ? 0
+    : /g[ée]rant/i.test(text(person.qualite)) ? 1
+    : /directeur g[ée]n[ée]ral/i.test(text(person.qualite)) ? 2 : 3;
+  return [...new Set((Array.isArray(company.dirigeants) ? company.dirigeants : []).filter(Boolean).slice().sort((a, b) => rank(a) - rank(b)).flatMap((person) => {
     if (!person || /commissaire aux comptes/i.test(text(person.qualite))) return [];
     const name = person.type_dirigeant === "personne morale"
       ? text(person.denomination)
       : [text(person.prenoms), text(person.nom)].filter(Boolean).join(" ");
     return name ? [name] : [];
-  }))].join(" | ");
+  }))][0] ?? "";
 }
 
 function publicPhone(establishment) {
@@ -50,7 +54,7 @@ function publicPhone(establishment) {
 
 export function companyRows(company, department, naf) {
   if (!company || company.etat_administratif !== "A" || company.statut_diffusion !== "O" ||
-      !EMPLOYEE_BRACKETS.includes(company.tranche_effectif_salarie) || company.activite_principale !== naf ||
+      company.activite_principale !== naf ||
       !/^\d{9}$/.test(company.siren)) return [];
   const establishments = [...(company.siege ? [company.siege] : []), ...(company.matching_etablissements ?? [])];
   const rows = new Map();
@@ -60,6 +64,8 @@ export function companyRows(company, department, naf) {
         !establishment.siret.startsWith(company.siren)) continue;
     const row = {
       raison_sociale: text(company.nom_raison_sociale) || text(company.nom_complet),
+      nom_commercial: text(establishment.nom_commercial) || (Array.isArray(establishment.liste_enseignes) ? establishment.liste_enseignes.filter(Boolean).join(" | ") : ""),
+      adresse: text(establishment.adresse),
       nom_dirigeant: directors(company),
       commune: text(establishment.libelle_commune),
       code_postal: text(establishment.code_postal),
@@ -79,7 +85,7 @@ export function companyRows(company, department, naf) {
   return [...rows.values()];
 }
 
-export const COLUMNS = ["raison_sociale", "nom_dirigeant", "commune", "code_postal", "telephone", "siret", "siren", "naf_entreprise", "tranche_effectif_entreprise", "annee_effectif", "source"];
+export const COLUMNS = ["raison_sociale", "nom_commercial", "nom_dirigeant", "adresse", "commune", "code_postal", "telephone", "siret", "siren", "naf_entreprise", "tranche_effectif_entreprise", "annee_effectif", "source"];
 export function toCsv(rows) {
   const cell = (value, column) => {
     let content = String(value ?? "").replace(/\u0000/g, "");
@@ -100,7 +106,7 @@ export function createApiClient({ fetchImpl = fetch, wait = sleep, now = Date.no
       lastRequest = now();
       let response;
       try {
-        response = await fetchImpl(url, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(20_000), redirect: "error" });
+        response = await fetchImpl(url, { headers: { Accept: "application/json", "User-Agent": "Leads-Engine/prospection (public business directory export)" }, signal: AbortSignal.timeout(20_000), redirect: "error" });
       } catch {
         if (attempt === 2) throw new Error("API inaccessible après trois tentatives. Aucun CSV partiel publié.");
         await wait(1000 * 2 ** attempt);
@@ -123,6 +129,7 @@ export async function extractPros(departmentInput, nafInput, { get = createApiCl
   const naf = normalizeNaf(nafInput);
   const rows = new Map();
   const seenCompanies = new Set();
+  const rawPages = [];
   let totalPages = 1;
   let totalResults;
   for (let page = 1; page <= totalPages; page++) {
@@ -132,10 +139,11 @@ export async function extractPros(departmentInput, nafInput, { get = createApiCl
     while (true) {
       const url = new URL(API);
       url.search = new URLSearchParams({ departement: department, activite_principale: naf, etat_administratif: "A",
-        tranche_effectif_salarie: EMPLOYEE_BRACKETS.join(","), page: String(page), per_page: "25",
+        page: String(page), per_page: "25",
         limite_matching_etablissements: "100", page_etablissements: String(establishmentPage),
         minimal: "true", include: "siege,dirigeants,matching_etablissements" }).toString();
       const payload = await get(url);
+      rawPages.push({ url: url.href, fetchedAt: new Date().toISOString(), response: payload });
       if (!payload || !Array.isArray(payload.results) || payload.page !== page || payload.per_page !== 25 ||
           !Number.isSafeInteger(payload.total_pages) || payload.total_pages < 0 ||
           !Number.isSafeInteger(payload.total_results) || payload.total_results < 0) throw new Error("Pagination API invalide.");
@@ -166,20 +174,26 @@ export async function extractPros(departmentInput, nafInput, { get = createApiCl
     progress(`Page ${page}/${Math.max(1, totalPages)} : ${rows.size} établissements retenus.`);
   }
   if (seenCompanies.size !== totalResults) throw new Error("Nombre d’entreprises incohérent ; aucun CSV partiel publié.");
-  return { department, naf, scanned: seenCompanies.size,
+  return { department, naf, scanned: seenCompanies.size, rawPages,
     rows: [...rows.values()].sort((a, b) => a.siret.localeCompare(b.siret)) };
 }
 
-export async function writeExport(result, outputDir = ROOT) {
-  const path = resolve(outputDir, `partners-to-contact-${result.department}-${result.naf.replace(".", "")}.csv`);
-  const temporary = `${path}.${randomUUID()}.tmp`;
-  try {
-    await writeFile(temporary, toCsv(result.rows), { flag: "wx" });
-    await rename(temporary, path);
-  } finally {
-    await unlink(temporary).catch((error) => { if (error.code !== "ENOENT") throw error; });
+export async function writeExport(result, outputDir = resolve(ROOT, "data/prospection")) {
+  await mkdir(outputDir, { recursive: true });
+  const base = resolve(outputDir, `partners-to-contact-${result.department}-${result.naf.replace(".", "")}`);
+  const csvPath = `${base}.csv`;
+  const jsonPath = `${base}.json`;
+  // Les réponses API originales sont conservées avec leur provenance/pagination.
+  for (const [path, content] of [[jsonPath, JSON.stringify({ department: result.department, naf: result.naf, exportedAt: new Date().toISOString(), pages: result.rawPages }, null, 2) + "\n"], [csvPath, toCsv(result.rows)]]) {
+    const temporary = `${path}.${randomUUID()}.tmp`;
+    try {
+      await writeFile(temporary, content, { flag: "wx" });
+      await rename(temporary, path);
+    } finally {
+      await unlink(temporary).catch((error) => { if (error.code !== "ENOENT") throw error; });
+    }
   }
-  return path;
+  return { csvPath, jsonPath };
 }
 
 async function main() {
@@ -187,10 +201,10 @@ async function main() {
   if (args.includes("--help")) { console.log("Usage : node scripts/extract-pros-sirene.mjs <département> <NAF> (ex. 78 4942Z)"); return; }
   if (args.length !== 2) throw new Error("Usage : node scripts/extract-pros-sirene.mjs <département> <NAF>");
   const result = await extractPros(...args);
-  const path = await writeExport(result);
+  const { csvPath, jsonPath } = await writeExport(result);
   const companies = new Set(result.rows.map((row) => row.siren)).size;
   const phones = result.rows.filter((row) => row.telephone).length;
-  console.log(`${result.scanned} entreprises examinées ; ${companies} entreprises et ${result.rows.length} établissements exportés ; ${phones} téléphones publiés.\nCSV : ${path}`);
+  console.log(`${result.scanned} entreprises examinées ; ${companies} entreprises et ${result.rows.length} établissements exportés ; ${phones} téléphones publiés.\nCSV : ${csvPath}\nJSON brut : ${jsonPath}`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

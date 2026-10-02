@@ -63,7 +63,7 @@ const steps: { title: string; fields: Field[] }[] = [
   ] },
 ];
 
-const controlClass = "mt-2 min-h-12 w-full rounded-xl border border-slate-400 bg-white px-3 py-2 text-base text-slate-950 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 aria-[invalid=true]:border-red-700";
+const controlClass = "mt-2 min-h-12 min-w-0 w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3 py-2 text-base text-slate-950 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 aria-[invalid=true]:border-red-700";
 const buttonClass = "min-h-12 rounded-xl px-5 py-3 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
 
 type LeadFormRenovationProps = {
@@ -127,7 +127,7 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
   }
 
   return (
-    <section aria-labelledby={`${id}-heading`} className="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-white p-5 text-slate-900 shadow-sm sm:p-8">
+    <section aria-labelledby={`${id}-heading`} className="mx-auto max-w-2xl rounded-2xl bg-white p-5 text-slate-900 sm:p-8">
       {success ? (
         <div className="py-8 text-center">
           <h2 ref={headingRef} id={`${id}-heading`} tabIndex={-1} className="text-2xl font-bold focus:outline-none">Merci pour votre demande !</h2>
@@ -138,7 +138,7 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
         <>
           <nav aria-label="Étapes du formulaire" className="mb-8">
             <p aria-live="polite" aria-atomic="true" className={`mb-3 text-sm font-semibold ${theme.accent}`}>Étape {step + 1} sur 3 : {steps[step].title}</p>
-            <progress aria-label="Avancement du formulaire" value={step + 1} max={3} className="h-2 w-full accent-indigo-700" />
+            <progress aria-label="Avancement du formulaire" value={step + 1} max={3} className="h-2 w-full accent-emerald-700" />
             <ol className="mt-3 grid grid-cols-3 gap-2 text-sm">
               {steps.map((item, index) => <li key={item.title} aria-current={index === step ? "step" : undefined} className={index === step ? `font-bold ${theme.accent}` : "text-slate-600"}>{item.title}</li>)}
             </ol>
@@ -173,7 +173,7 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
                 const blocked = field.name === "property.occupancyStatus" && isTenant;
                 const accessibility = { id: fieldId, "aria-invalid": Boolean(error) || blocked, "aria-describedby": blocked ? `${id}-tenant-message` : error ? `${fieldId}-error` : undefined };
                 return (
-                  <div key={field.name}>
+                  <div key={field.name} className="min-w-0">
                     <label htmlFor={fieldId} className="font-medium">{field.label}</label>
                     {field.options ? (
                       <select {...register(field.name)} {...accessibility} required defaultValue="" autoComplete={field.autoComplete} className={controlClass}>
@@ -191,9 +191,10 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
             {step === 1 && isTenant && <p id={`${id}-tenant-message`} role="alert" className="mt-5 rounded-xl border border-amber-300 bg-amber-50 p-4 text-amber-950">Vous êtes locataire : l’accord du propriétaire est requis avant toute demande de devis. Ce formulaire est réservé aux propriétaires et futurs acquéreurs. Invitez votre propriétaire à effectuer la demande.</p>}
             {submissionError && <p ref={errorRef} role="alert" tabIndex={-1} className="mt-5 rounded-xl bg-red-50 p-4 text-red-800 focus:outline-none focus:ring-2 focus:ring-red-700">{submissionError}</p>}
             <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
-              {step > 0 && <button type="button" disabled={busy} onClick={() => { if (!pending.current) goToStep(step - 1); }} className={`${buttonClass} border border-slate-400 hover:bg-slate-50 focus-visible:ring-indigo-700`}>Retour</button>}
+              {step > 0 && <button type="button" disabled={busy} onClick={() => { if (!pending.current) goToStep(step - 1); }} className={`${buttonClass} border border-slate-400 hover:bg-slate-50 focus-visible:ring-emerald-700`}>Retour</button>}
               <button type="submit" disabled={busy || (step > 0 && isTenant)} className={`${buttonClass} ${theme.button} sm:ml-auto`}>{formState.isSubmitting ? "Envoi en cours…" : advancing ? "Vérification…" : step === 2 ? "Envoyer ma demande" : "Suivant"}</button>
             </div>
+            <p className="mt-4 text-center text-xs leading-5 text-slate-500">Vos coordonnées sont réservées au traitement de votre demande, avec 2 professionnels maximum. <a href="#mentions-legales" className="underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-emerald-700">Gestion de vos données</a></p>
             <p role="status" className="sr-only">{formState.isSubmitting ? "Envoi de votre demande en cours." : ""}</p>
           </form>
         </>

@@ -39,9 +39,9 @@ const TENANTS = {
     // À remplacer par la raison sociale réelle de l'apporteur d'affaires.
     legalEntity: "Raison sociale à renseigner",
     theme: {
-      accent: "text-indigo-800",
-      button: "bg-indigo-700 text-white hover:bg-indigo-800 focus-visible:ring-indigo-700",
-      badge: "border-indigo-200 bg-indigo-50 text-indigo-800",
+      accent: "text-emerald-800",
+      button: "bg-emerald-800 text-white hover:bg-emerald-900 focus-visible:ring-emerald-700",
+      badge: "border-emerald-200 bg-emerald-50 text-emerald-800",
     },
     labels: {
       mainTitle: "Donnez vie à vos projets de rénovation.",

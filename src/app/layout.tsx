@@ -8,6 +8,7 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-inter",
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,7 +23,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const tenant = await getServerTenantConfig();
   return (
     <html lang="fr">
-      <body className={`${inter.className} min-h-screen bg-slate-50 text-slate-900 antialiased`}>
+      <body className={`${inter.className} ${inter.variable} min-h-screen bg-slate-50 text-slate-900 antialiased`}>
         <TenantProvider tenant={tenant}>{children}</TenantProvider>
       </body>
     </html>

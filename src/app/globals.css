@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+::selection { background: #a7f3d0; color: #0f172a; }
+
+/* Les champs restent réductibles dans les colonnes du formulaire sur mobile. */
+input, select, textarea { max-width: 100%; }

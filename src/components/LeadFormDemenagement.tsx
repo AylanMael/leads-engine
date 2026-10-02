@@ -58,7 +58,7 @@ const steps: { title: string; description: string; fields: Field[] }[] = [
   },
 ];
 
-const controlClass = "mt-2 block min-h-12 w-full rounded-xl border border-slate-400 bg-white px-3 py-2 text-base text-slate-950 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 aria-[invalid=true]:border-red-700 disabled:opacity-60";
+const controlClass = "mt-2 block min-h-12 min-w-0 w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3 py-2 text-base text-slate-950 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 aria-[invalid=true]:border-red-700 disabled:opacity-60";
 const buttonClass = "min-h-12 rounded-xl px-5 py-3 font-semibold focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 disabled:cursor-wait disabled:opacity-60";
 
 type LeadFormDemenagementProps = {
@@ -134,7 +134,7 @@ export default function LeadFormDemenagement({
   }
 
   return (
-    <section className="mx-auto w-full max-w-2xl rounded-2xl border border-slate-200 bg-white p-5 text-slate-900 shadow-sm sm:p-8" aria-labelledby={`${id}-heading`}>
+    <section className="mx-auto w-full max-w-2xl rounded-2xl bg-white p-5 text-slate-900 sm:p-8" aria-labelledby={`${id}-heading`}>
       {success ? (
         <div className="py-8 text-center">
           <span aria-hidden="true" className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-teal-100 text-3xl text-teal-800">✓</span>
@@ -212,7 +212,7 @@ export default function LeadFormDemenagement({
                 const describedBy = [readOnly ? `${id}-departure-hint` : null, field.hint ? `${fieldId}-hint` : null, invalid ? `${fieldId}-error` : null].filter(Boolean).join(" ") || undefined;
                 const accessibility = { id: fieldId, "aria-invalid": invalid, "aria-describedby": describedBy };
                 return (
-                  <div key={field.name}>
+                  <div key={field.name} className="min-w-0">
                     {field.type === "checkbox" ? (
                       <label htmlFor={fieldId} className="flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border border-slate-300 px-3 py-3 font-medium">
                         <input {...register(field.name)} {...accessibility} type="checkbox" className="h-5 w-5 accent-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" />
@@ -247,11 +247,12 @@ export default function LeadFormDemenagement({
             )}
 
             <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
-              {step > 0 && <button type="button" disabled={busy} onClick={() => { if (!actionPending.current) goToStep(step - 1); }} className={`${buttonClass} border border-slate-400 bg-white text-slate-800 hover:bg-slate-50`}>Retour</button>}
+              {step > 0 && <button type="button" disabled={busy} onClick={() => { if (!actionPending.current) goToStep(step - 1); }} className={`${buttonClass} border border-slate-300 bg-slate-50/50 text-slate-800 hover:bg-slate-50`}>Retour</button>}
               <button type="submit" disabled={busy} className={`${buttonClass} bg-teal-700 text-white hover:bg-teal-800 sm:ml-auto`}>
                 {formState.isSubmitting ? "Envoi en cours…" : advancing ? "Vérification…" : step === steps.length - 1 ? "Envoyer ma demande" : "Suivant"}
               </button>
             </div>
+            <p className="mt-4 text-center text-xs leading-5 text-slate-500">Vos coordonnées sont réservées au traitement de votre demande, avec 2 professionnels maximum. <a href="#mentions-legales" className="underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-emerald-700">Gestion de vos données</a></p>
             <p role="status" className="sr-only">{formState.isSubmitting ? "Envoi de votre demande en cours." : ""}</p>
           </form>
         </>

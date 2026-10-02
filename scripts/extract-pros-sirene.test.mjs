@@ -14,8 +14,8 @@ test("NAF et géographie : normalisation, Corse et DOM", () => {
   assert.equal(establishmentDepartment({ commune: "97411" }), "974");
 });
 
-test("activité, effectif inconnu/zéro, établissement fermé/hors zone exclus", () => {
-  for (const tranche of [null, "NN", "00"]) assert.deepEqual(companyRows({ ...company, tranche_effectif_salarie: tranche }, "78", "49.42Z"), []);
+test("effectif non filtré ; activité, établissement fermé/hors zone exclus", () => {
+  for (const tranche of [null, "NN", "00"]) assert.equal(companyRows({ ...company, tranche_effectif_salarie: tranche }, "78", "49.42Z").length, 1);
   assert.deepEqual(companyRows({ ...company, etat_administratif: "C" }, "78", "49.42Z"), []);
   for (const change of [{ etat_administratif: "F" }, { commune: "75101" }, { statut_diffusion_etablissement: "P" }]) {
     assert.deepEqual(companyRows({ ...company, matching_etablissements: [{ ...establishment, ...change }] }, "78", "49.42Z"), []);
@@ -29,6 +29,16 @@ test("siège hors département, établissement local et absence de téléphone",
   assert.equal(rows[0].nom_dirigeant, "Alex Test");
   assert.equal(rows[0].telephone, "");
   assert.equal(companyRows({ ...company, siege: establishment }, "78", "49.42Z").length, 1);
+});
+
+test("adresse, enseigne et priorité au dirigeant exécutif disponible", () => {
+  const [row] = companyRows({ ...company,
+    dirigeants: [{ prenoms: "Audit", nom: "Exclu", qualite: "Commissaire aux comptes" }, { prenoms: "Alex", nom: "Principal", qualite: "Président" }],
+    matching_etablissements: [{ ...establishment, adresse: "1 RUE TEST 78000 VERSAILLES", liste_enseignes: ["Enseigne test"] }],
+  }, "78", "49.42Z");
+  assert.equal(row.adresse, "1 RUE TEST 78000 VERSAILLES");
+  assert.equal(row.nom_commercial, "Enseigne test");
+  assert.equal(row.nom_dirigeant, "Alex Principal");
 });
 
 test("CSV : UTF-8 BOM, guillemets, séparateurs et neutralisation de formules", () => {
