@@ -1,0 +1,722 @@
+[
+  {
+    "slug": "nanterre-92000",
+    "name": "Nanterre",
+    "postalCode": "92000",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92050",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Nanterre : code INSEE 92050, code postal 92000.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "boulogne-billancourt-92100",
+    "name": "Boulogne-Billancourt",
+    "postalCode": "92100",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92012",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Boulogne-Billancourt : code INSEE 92012, code postal 92100.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "clichy-92110",
+    "name": "Clichy",
+    "postalCode": "92110",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92024",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Clichy : code INSEE 92024, code postal 92110.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "montrouge-92120",
+    "name": "Montrouge",
+    "postalCode": "92120",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92049",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Montrouge : code INSEE 92049, code postal 92120.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "issy-les-moulineaux-92130",
+    "name": "Issy-les-Moulineaux",
+    "postalCode": "92130",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92040",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Issy-les-Moulineaux : code INSEE 92040, code postal 92130.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "clamart-92140",
+    "name": "Clamart",
+    "postalCode": "92140",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92023",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Clamart : code INSEE 92023, code postal 92140.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "suresnes-92150",
+    "name": "Suresnes",
+    "postalCode": "92150",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92073",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Suresnes : code INSEE 92073, code postal 92150.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "antony-92160",
+    "name": "Antony",
+    "postalCode": "92160",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92002",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Antony : code INSEE 92002, code postal 92160.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "vanves-92170",
+    "name": "Vanves",
+    "postalCode": "92170",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92075",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Vanves : code INSEE 92075, code postal 92170.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "meudon-92190",
+    "name": "Meudon",
+    "postalCode": "92190",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92048",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Meudon : code INSEE 92048, code postal 92190.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "neuilly-sur-seine-92200",
+    "name": "Neuilly-sur-Seine",
+    "postalCode": "92200",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92051",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Neuilly-sur-Seine : code INSEE 92051, code postal 92200.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "saint-cloud-92210",
+    "name": "Saint-Cloud",
+    "postalCode": "92210",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92064",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Saint-Cloud : code INSEE 92064, code postal 92210.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "bagneux-92220",
+    "name": "Bagneux",
+    "postalCode": "92220",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92007",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Bagneux : code INSEE 92007, code postal 92220.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "gennevilliers-92230",
+    "name": "Gennevilliers",
+    "postalCode": "92230",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92036",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Gennevilliers : code INSEE 92036, code postal 92230.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "malakoff-92240",
+    "name": "Malakoff",
+    "postalCode": "92240",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92046",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Malakoff : code INSEE 92046, code postal 92240.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "la-garenne-colombes-92250",
+    "name": "La Garenne-Colombes",
+    "postalCode": "92250",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92035",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "La Garenne-Colombes : code INSEE 92035, code postal 92250.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "fontenay-aux-roses-92260",
+    "name": "Fontenay-aux-Roses",
+    "postalCode": "92260",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92032",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Fontenay-aux-Roses : code INSEE 92032, code postal 92260.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "bois-colombes-92270",
+    "name": "Bois-Colombes",
+    "postalCode": "92270",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92009",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Bois-Colombes : code INSEE 92009, code postal 92270.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "chatenay-malabry-92290",
+    "name": "Châtenay-Malabry",
+    "postalCode": "92290",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92019",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Châtenay-Malabry : code INSEE 92019, code postal 92290.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "levallois-perret-92300",
+    "name": "Levallois-Perret",
+    "postalCode": "92300",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92044",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Levallois-Perret : code INSEE 92044, code postal 92300.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "sevres-92310",
+    "name": "Sèvres",
+    "postalCode": "92310",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92072",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Sèvres : code INSEE 92072, code postal 92310.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "chatillon-92320",
+    "name": "Châtillon",
+    "postalCode": "92320",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92020",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Châtillon : code INSEE 92020, code postal 92320.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "sceaux-92330",
+    "name": "Sceaux",
+    "postalCode": "92330",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92071",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Sceaux : code INSEE 92071, code postal 92330.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "bourg-la-reine-92340",
+    "name": "Bourg-la-Reine",
+    "postalCode": "92340",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92014",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Bourg-la-Reine : code INSEE 92014, code postal 92340.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "le-plessis-robinson-92350",
+    "name": "Le Plessis-Robinson",
+    "postalCode": "92350",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92060",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Le Plessis-Robinson : code INSEE 92060, code postal 92350.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "chaville-92370",
+    "name": "Chaville",
+    "postalCode": "92370",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92022",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Chaville : code INSEE 92022, code postal 92370.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "garches-92380",
+    "name": "Garches",
+    "postalCode": "92380",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92033",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Garches : code INSEE 92033, code postal 92380.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "villeneuve-la-garenne-92390",
+    "name": "Villeneuve-la-Garenne",
+    "postalCode": "92390",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92078",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Villeneuve-la-Garenne : code INSEE 92078, code postal 92390.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "courbevoie-92400",
+    "name": "Courbevoie",
+    "postalCode": "92400",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92026",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Courbevoie : code INSEE 92026, code postal 92400.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "ville-d-avray-92410",
+    "name": "Ville-d'Avray",
+    "postalCode": "92410",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92077",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Ville-d'Avray : code INSEE 92077, code postal 92410.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "vaucresson-92420",
+    "name": "Vaucresson",
+    "postalCode": "92420",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92076",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Vaucresson : code INSEE 92076, code postal 92420.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "marnes-la-coquette-92430",
+    "name": "Marnes-la-Coquette",
+    "postalCode": "92430",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92047",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Marnes-la-Coquette : code INSEE 92047, code postal 92430.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "rueil-malmaison-92500",
+    "name": "Rueil-Malmaison",
+    "postalCode": "92500",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92063",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Rueil-Malmaison : code INSEE 92063, code postal 92500.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "asnieres-sur-seine-92600",
+    "name": "Asnières-sur-Seine",
+    "postalCode": "92600",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92004",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Asnières-sur-Seine : code INSEE 92004, code postal 92600.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "colombes-92700",
+    "name": "Colombes",
+    "postalCode": "92700",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92025",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Colombes : code INSEE 92025, code postal 92700.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "puteaux-92800",
+    "name": "Puteaux",
+    "postalCode": "92800",
+    "departmentCode": "92",
+    "departmentName": "Hauts-de-Seine",
+    "inseeCode": "92062",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Puteaux : code INSEE 92062, code postal 92800.",
+        "source": "https://geo.api.gouv.fr/departements/92/communes?fields=nom,code,codesPostaux"
+      }
+    ]
+  }
+]

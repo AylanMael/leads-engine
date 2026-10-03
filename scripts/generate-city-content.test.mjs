@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { jaccard, wordTrigrams, generateCity, createGenerator, closestMatch, validateContent, parseArguments, sourceHash } from "./generate-city-content.mjs";
 import { validateCatalogue } from "../src/lib/city-content.mjs";
+import { validateDepartmentContent } from "../src/lib/department-context.mjs";
 
 const city = { slug: "versailles-78000", name: "Versailles", postalCode: "78000", departmentCode: "78", departmentName: "Yvelines", context: { housingType: "À enrichir : bâti", trafficNote: "À enrichir : stationnement", neighborhoods: [] }, faq: [] };
 const content = {
@@ -13,6 +14,13 @@ const content = {
     { question: "Comment organiser le chargement ?", answer: "Placez les cartons fragiles à part et transmettez au professionnel un inventaire précis avant la visite technique." },
   ],
 };
+
+test("contexte parisien : rejette horaires inventés et confusion CITE/bruit", () => {
+  const paris = { ...city, departmentCode: "75" };
+  assert.throws(() => validateDepartmentContent({ ...content, accessNotice: "Travaux autorisés de 8h à 20h." }, paris, "renovation"), /Horaires/);
+  assert.throws(() => validateDepartmentContent({ ...content, accessNotice: "Consultez CITE pour les horaires autorisés de bruit." }, paris, "renovation"), /CITE/);
+  assert.throws(() => validateDepartmentContent({ ...content, accessNotice: "Sans autorisation de stationnement, vous serez verbalisé." }, paris, "demenagement"), /AOT/);
+});
 
 test("trigrammes normalisés, sets et seuil exact", () => {
   assert.deepEqual(wordTrigrams("Étage, escalier : étroit !"), new Set(["etage escalier etroit"]));

@@ -1,0 +1,562 @@
+[
+  {
+    "headline": "Rénovation à Paris 10e Arrondissement : conseils pratiques pour les projets de transformation",
+    "accessNotice": "Avant d'entamer vos travaux de rénovation à Paris 10e, il est crucial de vérifier le Plan Local d'Urbanisme (PLU) valide pour votre parcelle. Si vous êtes en copropriété, consultez le règlement applicable afin de connaître les éventuelles restrictions. Pensez également à planifier les livraisons de matériaux en tenant compte des accès, notamment si vous devez passer par des halls ou escaliers étroits.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour ma propriété à Paris 10e ?",
+        "answer": "Pour connaître le PLU de votre propriété dans le 10e arrondissement, vous pouvez consulter le site officiel de la Ville de Paris. Ce site fournit des informations sur les règles d'urbanisme applicables à votre parcelle, y compris les restrictions sur les types de travaux autorisés."
+      },
+      {
+        "question": "Quelles sont les règles de copropriété à respecter à Paris 10e ?",
+        "answer": "Les règles de copropriété à Paris 10e varient selon chaque immeuble. Il est essentiel de lire le règlement de copropriété pour connaître les autorisations nécessaires pour vos travaux, ainsi que les restrictions possibles concernant les horaires et le type de travaux."
+      },
+      {
+        "question": "Ai-je besoin d'une autorisation pour des travaux dans un secteur protégé à Paris 10e ?",
+        "answer": "Si votre bâtiment est localisé dans un secteur protégé, vous devrez probablement demander une autorisation préalable. Cela inclut souvent une consultation avec les Architectes des Bâtiments de France (ABF) pour les modifications touchant à l'aspect extérieur de l'immeuble."
+      }
+    ],
+    "slug": "paris-10e-75010",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:55:35.950Z",
+      "attempts": 2,
+      "maxSimilarity": 0.23314606741573032,
+      "sourceHash": "6df52fdfc3cfe21f9f70724c78e242d5b29ab428431fb77a48d5a791491cb5ce"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 11e Arrondissement : Conseils pour votre projet",
+    "accessNotice": "Avant de commencer vos travaux de rénovation à Paris 11e, il est essentiel de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Renseignez-vous sur les éventuelles contraintes de copropriété et les règles de bruit. Si votre logement est situé dans un secteur protégé, une intervention de l'Architecte des Bâtiments de France (ABF) pourrait être nécessaire. Pensez également à organiser les livraisons de matériaux en tenant compte des accès et des horaires autorisés.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour ma rénovation à Paris 11e ?",
+        "answer": "Pour vérifier le PLU applicable à votre parcelle à Paris 11e, vous pouvez consulter le site officiel de la Ville de Paris ou vous rendre en mairie. Ces documents vous fourniront des informations sur les règles d'urbanisme et les contraintes spécifiques à respecter pour vos travaux."
+      },
+      {
+        "question": "Quelles sont les règles de bruit à respecter lors de travaux ?",
+        "answer": "À Paris 11e, les travaux de rénovation doivent respecter des horaires spécifiques pour limiter les nuisances sonores. Généralement, les travaux peuvent être effectués en semaine durant la journée. Il est conseillé de consulter le règlement de copropriété et de se renseigner auprès de la mairie pour connaître les horaires exacts."
+      },
+      {
+        "question": "Ai-je besoin d'une autorisation pour les livraisons de matériaux ?",
+        "answer": "Oui, pour les livraisons de matériaux à Paris 11e, il est souvent nécessaire de demander une autorisation d'occupation temporaire (AOT) de l'espace public, surtout si cela implique un stationnement prolongé sur la voie publique. Renseignez-vous auprès de la mairie pour les démarches à suivre."
+      }
+    ],
+    "slug": "paris-11e-75011",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:52:00.340Z",
+      "attempts": 1,
+      "maxSimilarity": 0.2109375,
+      "sourceHash": "ce9241fb277367f5e9d0dc4d52db904400f579c30d7c6dca23dd355084e1eb4d"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 12e Arrondissement : Points à Vérifier pour les Travaux",
+    "accessNotice": "Avant de commencer des travaux à Paris 12e, il est conseillé de consulter le Plan Local d'Urbanisme (PLU) en vigueur pour votre parcelle. Assurez-vous également de vérifier si des autorisations spécifiques sont nécessaires, comme celles liées à la copropriété ou à des protections patrimoniales éventuelles. En fonction de la nature des travaux, il pourrait être nécessaire de demander une occupation de l'espace public pour les livraisons ou les équipements, en particulier dans des zones à accès limité comme les cours pavées ou les immeubles anciens.",
+    "faq": [
+      {
+        "question": "Quels documents dois-je préparer avant de commencer des travaux à Paris 12e ?",
+        "answer": "Il est essentiel de consulter le PLU qui s'applique à votre propriété. Vérifiez également les règles de copropriété si vous êtes en immeuble collectif, ainsi que les éventuelles autorisations liées à des protections patrimoniales."
+      },
+      {
+        "question": "Y a-t-il des restrictions spécifiques pour les travaux en copropriété ?",
+        "answer": "Oui, les travaux en copropriété peuvent être soumis à des règles strictes selon le règlement de copropriété. Il est recommandé de consulter ce règlement et éventuellement de soumettre votre projet au syndic pour approbation."
+      },
+      {
+        "question": "Comment gérer l'accès à l'immeuble pour des livraisons lors de la rénovation ?",
+        "answer": "Pour les livraisons et le stockage de matériel, vous pourriez avoir besoin d'une autorisation temporaire d'occupation de l'espace public. Il est conseillé de vérifier les procédures de la Ville de Paris à cet égard."
+      }
+    ],
+    "slug": "paris-12e-75012",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:55:49.041Z",
+      "attempts": 2,
+      "maxSimilarity": 0.0855106888361045,
+      "sourceHash": "d1a71a993db55c6f6a0d52b2cf1e4cd4eb88b04220fc49d9241f89b0c6492f0c"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 13e Arrondissement : conseils pour votre projet",
+    "accessNotice": "Avant de commencer des travaux de rénovation dans le 13e arrondissement de Paris, il est conseillé de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Cela vous permettra de connaître les règles spécifiques concernant les modifications possibles. Si votre bâtiment est en copropriété, consultez le règlement de copropriété pour les contraintes éventuelles. Pensez également à préparer les livraisons et à vous informer sur les horaires de travaux pour respecter les règles de bruit en vigueur.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour ma parcelle à Paris 13e ?",
+        "answer": "Pour vérifier le PLU de votre parcelle dans le 13e arrondissement, vous pouvez consulter le site officiel de la Ville de Paris. Il vous fournira les informations nécessaires sur les règles d'urbanisme applicables, notamment les prescriptions spécifiques pour les travaux de rénovation."
+      },
+      {
+        "question": "Quelles sont les contraintes de copropriété à Paris 13e ?",
+        "answer": "Les contraintes de copropriété peuvent varier d'un immeuble à l'autre dans le 13e arrondissement. Il est essentiel de consulter le règlement de copropriété de votre bâtiment avant d'entamer des travaux, car cela peut influencer la nature et l'étendue des rénovations autorisées."
+      },
+      {
+        "question": "Comment gérer le stationnement des matériaux lors des travaux ?",
+        "answer": "Pour le stationnement des matériaux lors de vos travaux dans le 13e arrondissement, vous devrez peut-être demander une Autorisation d'Occupation Temporaire (AOT) auprès de la Ville de Paris. Cela est particulièrement important si vous devez utiliser l'espace public pour le stockage ou la livraison de matériaux."
+      }
+    ],
+    "slug": "paris-13e-75013",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:52:12.915Z",
+      "attempts": 1,
+      "maxSimilarity": 0.20157068062827224,
+      "sourceHash": "6d86ab7841ae9dbe6baf02395531b3911bd9a6377d21149f385dd6c94a97db72"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 14e Arrondissement : Conseils pratiques pour votre projet",
+    "accessNotice": "Avant de commencer vos travaux dans un appartement ou une maison à Paris 14e, il est essentiel de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Cela vous permettra de comprendre les contraintes spécifiques sur les modifications autorisées. Vérifiez également si des règles de copropriété sont en vigueur qui pourraient affecter votre projet. Pensez à planifier les livraisons des matériaux en tenant compte des autorisations nécessaires pour accéder à l’espace public si besoin.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour un projet de rénovation à Paris 14e ?",
+        "answer": "Pour vérifier le PLU applicable à votre parcelle dans le 14e arrondissement, consultez le site officiel de la Ville de Paris, où des documents et des ressources sont disponibles. Vous pouvez également contacter le service de l’urbanisme de votre mairie d'arrondissement pour obtenir des informations précises sur les normes et contraintes en vigueur."
+      },
+      {
+        "question": "Quelles autorisations sont nécessaires pour effectuer des travaux dans une copropriété à Paris 14e ?",
+        "answer": "Avant de débuter des travaux dans une copropriété, il est recommandé de consulter le règlement de copropriété pour identifier les autorisations requises. Selon la nature des travaux, il peut être nécessaire d'obtenir le vote de l'assemblée générale des copropriétaires. N'oubliez pas de tenir compte des horaires de chantier imposés par la copropriété."
+      },
+      {
+        "question": "Comment organiser les livraisons de matériaux pour des travaux à Paris 14e ?",
+        "answer": "Pour organiser vos livraisons, il est crucial de planifier à l'avance. Vérifiez si une autorisation d'occupation temporaire (AOT) est nécessaire pour stationner un véhicule ou un camion de livraison sur la voie publique. Assurez-vous également de coordonner les heures de livraison avec les règles de bruit en vigueur dans votre secteur."
+      }
+    ],
+    "slug": "paris-14e-75014",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:52:26.633Z",
+      "attempts": 2,
+      "maxSimilarity": 0.125,
+      "sourceHash": "af3b9919d6496a3fe259b9c84e599541ed5f788a239f45c56c297571b427a6d2"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 15e Arrondissement : conseils pratiques pour votre projet",
+    "accessNotice": "Avant de commencer vos travaux de rénovation à Paris 15e, il est conseillé de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Cela vous permettra de connaître les règles spécifiques à respecter. Si votre bâtiment est en copropriété, consultez le règlement de copropriété pour les contraintes liées aux travaux. Pensez également à informer vos voisins des éventuelles nuisances sonores et à préparer les livraisons de matériaux en tenant compte des accès étroits ou des horaires de chantier autorisés.",
+    "faq": [
+      {
+        "question": "Quelles vérifications faire avant de commencer des travaux de rénovation à Paris 15e ?",
+        "answer": "Avant de débuter vos travaux, il est essentiel de consulter le PLU pour connaître les règles d'urbanisme en vigueur. Vérifiez également si votre bâtiment est soumis à des contraintes de copropriété et si des autorisations spécifiques sont nécessaires pour les travaux envisagés."
+      },
+      {
+        "question": "Comment gérer les nuisances sonores lors de travaux de rénovation ?",
+        "answer": "Pour limiter les nuisances sonores liées à votre chantier, il est recommandé d'informer vos voisins à l'avance. Renseignez-vous également sur les horaires de travaux autorisés dans votre secteur, car des restrictions peuvent s'appliquer, notamment en période de tranquillité."
+      },
+      {
+        "question": "Quels sont les conseils pour la livraison de matériaux lors de travaux ?",
+        "answer": "Lors de la planification de vos livraisons de matériaux, tenez compte des accès à votre bâtiment. Si des passages étroits existent, prévoyez des solutions adaptées pour éviter les désagréments. Il peut être utile de coordonner les livraisons en dehors des heures de pointe pour faciliter l'accès."
+      }
+    ],
+    "slug": "paris-15e-75015",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:52:33.021Z",
+      "attempts": 1,
+      "maxSimilarity": 0.18045112781954886,
+      "sourceHash": "3718090595233563c3512f0faa2073e3d409410c28c9acdc7d256d2a2fbb590a"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 16e Arrondissement : conseils pratiques pour votre projet",
+    "accessNotice": "Avant de débuter vos travaux dans le 16e arrondissement de Paris, il est conseillé de vérifier le Plan Local d'Urbanisme (PLU) qui s'applique à votre parcelle. Identifiez également si votre projet nécessite l'intervention de l'Architecte des Bâtiments de France (ABF) en cas de secteur protégé. N'oubliez pas de consulter le règlement de copropriété pour respecter les contraintes spécifiques. Pensez à organiser les livraisons de matériaux en tenant compte de l'accès au site.",
+    "faq": [
+      {
+        "question": "Quelles sont les étapes pour vérifier le PLU avant des travaux ?",
+        "answer": "Pour vérifier le PLU applicable, vous pouvez consulter le site officiel de la Ville de Paris ou contacter le service d'urbanisme. Il vous fournira des informations sur les règles d'urbanisme en vigueur concernant votre parcelle. Cela vous permettra de savoir quelles modifications sont autorisées."
+      },
+      {
+        "question": "Comment gérer les contraintes de copropriété lors de la rénovation ?",
+        "answer": "Consulter le règlement de copropriété est essentiel avant de commencer des travaux. Il peut imposer des restrictions sur les horaires de chantier, les types de travaux autorisés et l'utilisation des parties communes. Assurez-vous d'obtenir les accords nécessaires de la copropriété."
+      },
+      {
+        "question": "Quelle est l'importance de l'Architecte des Bâtiments de France ?",
+        "answer": "L'Architecte des Bâtiments de France (ABF) intervient pour les projets situés dans des zones protégées. Si votre bien est concerné, vous devez soumettre votre projet pour obtenir un avis. Cela peut influencer la conception et les matériaux que vous pouvez utiliser."
+      }
+    ],
+    "slug": "paris-16e-75016",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:52:43.305Z",
+      "attempts": 2,
+      "maxSimilarity": 0.13849765258215962,
+      "sourceHash": "00588ed40bce64bb7fd4dd28210353c7ce249ddc515655bac3d1f84455a026bc"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 17e Arrondissement : Conseils pour les travaux dans un appartement haussmannien",
+    "accessNotice": "Avant de commencer des travaux de rénovation dans un appartement haussmannien à Paris 17e, il est crucial de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Assurez-vous également de consulter le règlement de copropriété pour connaître les éventuelles restrictions. Si votre immeuble est situé dans un secteur protégé, une autorisation de l'Architecte des Bâtiments de France (ABF) pourrait être nécessaire. Pensez à préparer les livraisons en tenant compte des accès étroits et des horaires de chantier autorisés.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour mon appartement à Paris 17e ?",
+        "answer": "Pour vérifier le PLU applicable à votre appartement à Paris 17e, vous pouvez consulter le site officiel de la Ville de Paris ou vous rendre en mairie. Cela vous permettra de connaître les règles d'urbanisme spécifiques à votre parcelle, notamment en matière de travaux et de modifications de façade."
+      },
+      {
+        "question": "Quelles sont les démarches pour obtenir une autorisation de travaux ?",
+        "answer": "Les démarches pour obtenir une autorisation de travaux à Paris 17e incluent le dépôt d'une demande de permis de construire ou d'une déclaration préalable, selon l'ampleur des travaux. Il est conseillé de consulter le service d'urbanisme de la mairie pour obtenir des informations précises sur les documents nécessaires et les délais de traitement."
+      },
+      {
+        "question": "Y a-t-il des restrictions concernant le bruit pendant les travaux ?",
+        "answer": "Oui, à Paris 17e, des restrictions concernant le bruit pendant les travaux s'appliquent. Généralement, les travaux bruyants ne sont pas autorisés en dehors des horaires réglementaires. Il est recommandé de se renseigner sur les horaires spécifiques à respecter en consultant le règlement de copropriété ou le site de la mairie."
+      }
+    ],
+    "slug": "paris-17e-75017",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:55:55.235Z",
+      "attempts": 1,
+      "maxSimilarity": 0.17715617715617715,
+      "sourceHash": "5ab5565c8fa0253f910c13cf6f34795835f2dc47752bfe77ef0aee5227a4c5f2"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 18e Arrondissement : Conseils pratiques pour votre projet",
+    "accessNotice": "Avant de commencer vos travaux de rénovation à Paris 18e, il est essentiel de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Cela vous permettra de connaître les règles spécifiques concernant les modifications que vous envisagez. Si votre bâtiment est situé dans un secteur protégé, renseignez-vous sur l'éventuelle intervention de l'Architecte des Bâtiments de France (ABF). Pensez également à consulter le règlement de copropriété pour respecter les contraintes liées aux travaux et à organiser les livraisons de matériaux en conséquence.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour ma rénovation à Paris 18e ?",
+        "answer": "Pour vérifier le PLU applicable à votre parcelle à Paris 18e, vous pouvez consulter le site officiel de la Ville de Paris. Il y est possible d'accéder aux documents d'urbanisme et de connaître les règles spécifiques qui s'appliquent à votre projet de rénovation."
+      },
+      {
+        "question": "Quelles sont les contraintes de copropriété à Paris 18e ?",
+        "answer": "Les contraintes de copropriété à Paris 18e peuvent varier selon les règlements de chaque immeuble. Il est recommandé de consulter le règlement de copropriété avant d'entreprendre des travaux, car certaines modifications peuvent nécessiter l'accord de l'assemblée générale des copropriétaires."
+      },
+      {
+        "question": "Dois-je demander une autorisation pour des travaux à Paris 18e ?",
+        "answer": "Oui, pour des travaux de rénovation à Paris 18e, il est souvent nécessaire de demander une autorisation préalable. Cela dépend de la nature des travaux et de la protection patrimoniale de votre bâtiment. Renseignez-vous auprès des services de la Ville de Paris pour connaître les démarches à suivre."
+      }
+    ],
+    "slug": "paris-18e-75018",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:52:54.943Z",
+      "attempts": 1,
+      "maxSimilarity": 0.20572916666666666,
+      "sourceHash": "5850be0459532ff6affe4ea50f113cf09aee23c4d399db031c3dd8ca34e3c9a1"
+    }
+  },
+  {
+    "headline": "Rénovation dans le 19e Arrondissement de Paris : Considérations Techniques",
+    "accessNotice": "Avant de commencer des travaux de rénovation dans un appartement du 19e arrondissement, il est crucial de consulter le Plan Local d'Urbanisme (PLU) en vigueur pour votre emplacement. Vérifiez également si des autorisations sont requises auprès des instances locales, notamment pour les travaux en copropriété ou ceux qui pourraient affecter le patrimoine. Préparez les livraisons de matériaux en tenant compte des accès et des horaires imposés par le règlement de copropriété.",
+    "faq": [
+      {
+        "question": "Comment vérifier les règles de copropriété pour mes travaux ?",
+        "answer": "Pour connaître les règles spécifiques de votre copropriété à Paris 19e, il est conseillé de consulter le règlement de copropriété qui devrait être disponible auprès de votre syndic ou de l'assemblée des copropriétaires. Ces documents précisent les types de travaux autorisés, les procédures à suivre et les heures de travail autorisées."
+      },
+      {
+        "question": "Quelles démarches pour les autorisations de travaux ?",
+        "answer": "Avant d'entamer vos travaux, renseignez-vous sur les demandes d'autorisation nécessaires auprès de la Ville de Paris. Cela peut inclure la consultation du PLU et d'autres règlements locaux. Vous pouvez également devoir déposer une demande d'autorisation de travaux au service compétent pour garantir la conformité de votre projet."
+      },
+      {
+        "question": "Comment organiser le stationnement pour mes livraisons ?",
+        "answer": "Pour les livraisons de matériaux, assurez-vous d'obtenir une autorisation d'occupation temporaire (AOT) si cela implique de stationner sur l'espace public. Cette demande est à réaliser auprès des services de la Ville de Paris et doit être faite à l'avance pour éviter toute contrainte le jour de la livraison."
+      }
+    ],
+    "slug": "paris-19e-75019",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:53:07.451Z",
+      "attempts": 2,
+      "maxSimilarity": 0.09333333333333334,
+      "sourceHash": "df19d38ad801a01ef9ff5612adc7edae1bb90c3fe8ac795abda5bea7fd8a4a68"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 1er Arrondissement : conseils pour un projet réussi",
+    "accessNotice": "Avant de commencer vos travaux de rénovation à Paris 1er, vérifiez le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Cela vous permettra de connaître les règles spécifiques et les éventuelles restrictions. Si votre bâtiment est situé dans un secteur protégé, une demande auprès de l'Architecte des Bâtiments de France (ABF) peut être nécessaire. Pensez également à consulter le règlement de copropriété pour respecter les contraintes liées à votre immeuble.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour ma rénovation à Paris 1er ?",
+        "answer": "Pour vérifier le PLU applicable à votre parcelle dans le 1er arrondissement, vous pouvez consulter le site officiel de la Ville de Paris ou vous rendre à la mairie. Cela vous permettra d'obtenir des informations sur les règles d'urbanisme en vigueur et de vous assurer que vos travaux respectent la réglementation."
+      },
+      {
+        "question": "Quelles sont les contraintes de copropriété à prendre en compte ?",
+        "answer": "Avant de débuter des travaux de rénovation, il est essentiel de consulter le règlement de copropriété de votre immeuble. Ce document peut contenir des restrictions sur les types de travaux autorisés, les horaires de réalisation et d'autres aspects à respecter pour éviter les litiges avec les autres copropriétaires."
+      },
+      {
+        "question": "Dois-je demander une autorisation pour le stationnement de chantier ?",
+        "answer": "Oui, si vos travaux nécessitent un stationnement de chantier, vous devez demander une autorisation d'occupation temporaire (AOT) auprès de la Ville de Paris. Cette demande est nécessaire pour utiliser l'espace public pour le matériel et les livraisons, et elle doit être faite en amont des travaux."
+      }
+    ],
+    "slug": "paris-1er-75001",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:50:23.317Z",
+      "attempts": 1,
+      "maxSimilarity": 0,
+      "sourceHash": "1759047e219f800419e7bb6b6086b596f0ce3df99e6fd8b89567696fd20854c7"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 20e Arrondissement : conseils pour votre projet",
+    "accessNotice": "Avant de commencer vos travaux de rénovation à Paris 20e, il est conseillé de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Assurez-vous également de consulter le règlement de copropriété si vous êtes en copropriété, car cela peut impacter vos projets. Pensez à préparer les livraisons de matériaux en tenant compte des accès et des horaires de circulation dans le quartier.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour ma propriété à Paris 20e ?",
+        "answer": "Pour vérifier le PLU de votre propriété dans le 20e arrondissement de Paris, vous pouvez consulter le site officiel de la Ville de Paris. Il vous fournira des informations sur les règles d'urbanisme applicables à votre parcelle, y compris les restrictions et les possibilités de construction."
+      },
+      {
+        "question": "Quelles sont les contraintes de copropriété à Paris 20e ?",
+        "answer": "Les contraintes de copropriété à Paris 20e peuvent varier selon l'immeuble. Il est essentiel de consulter le règlement de copropriété pour connaître les règles spécifiques concernant les travaux, notamment les autorisations nécessaires et les horaires d'intervention."
+      },
+      {
+        "question": "Dois-je demander une autorisation pour les travaux dans un secteur protégé ?",
+        "answer": "Si votre propriété est située dans un secteur protégé, il est probable que vous deviez demander une autorisation préalable. Cela peut inclure une consultation avec les Architectes des Bâtiments de France (ABF) pour des travaux affectant l'apparence extérieure de votre bâtiment."
+      }
+    ],
+    "slug": "paris-20e-75020",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:53:13.503Z",
+      "attempts": 1,
+      "maxSimilarity": 0.22432432432432434,
+      "sourceHash": "621776fb28df0a2d1a2caefd9ba6b3a23afc20c2d5e8fc07fe140023aba36cb6"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 2e Arrondissement : conseils pour un projet réussi",
+    "accessNotice": "Avant de commencer vos travaux de rénovation dans le 2e arrondissement de Paris, il est essentiel de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Assurez-vous également de consulter le règlement de copropriété, surtout si vous êtes dans un immeuble haussmannien. Pensez à préparer les livraisons de matériaux en tenant compte des accès étroits et des horaires de circulation. En cas de besoin, renseignez-vous sur les éventuelles interventions de l'Architecte des Bâtiments de France (ABF) si votre projet se situe dans un secteur protégé.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour mon projet de rénovation à Paris 2e ?",
+        "answer": "Pour vérifier le PLU applicable à votre parcelle dans le 2e arrondissement, vous pouvez consulter le site officiel de la Ville de Paris. Il fournit des informations détaillées sur les règles d'urbanisme, les zones protégées et les contraintes spécifiques qui pourraient affecter votre projet."
+      },
+      {
+        "question": "Quelles sont les contraintes de copropriété à prendre en compte ?",
+        "answer": "Les contraintes de copropriété peuvent varier selon les règlements internes de votre immeuble. Il est conseillé de consulter le syndic de copropriété pour connaître les règles concernant les travaux, notamment les horaires autorisés et les restrictions sur les modifications extérieures."
+      },
+      {
+        "question": "Faut-il une autorisation pour le stationnement de chantier ?",
+        "answer": "Oui, pour le stationnement de chantier à Paris, une autorisation d'occupation temporaire (AOT) est nécessaire. Vous devez faire une demande auprès des services de la Ville de Paris, en précisant la durée et l'emplacement souhaités pour garantir la conformité avec les réglementations locales."
+      }
+    ],
+    "slug": "paris-2e-75002",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:50:31.080Z",
+      "attempts": 1,
+      "maxSimilarity": 0.19554455445544555,
+      "sourceHash": "5b3bdc5e9fa7bbb46c26357481cbc1428e488a3880710ef2d412946fbc56a2e8"
+    }
+  },
+  {
+    "slug": "paris-3e-75003",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "headline": "Rénovation à Paris 3e Arrondissement : conseils pour les travaux en copropriété",
+    "accessNotice": "Avant de commencer vos travaux dans le 3e arrondissement de Paris, il est conseillé de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Cela vous permettra de connaître les règles spécifiques sur les modifications extérieures. Pensez également à consulter le règlement de copropriété pour éviter les litiges. Si votre bâtiment est en secteur protégé, une autorisation de l'Architecte des Bâtiments de France (ABF) pourrait être nécessaire. Enfin, préparez vos livraisons en tenant compte des accès étroits et des horaires autorisés.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour mon projet de rénovation ?",
+        "answer": "Pour vérifier le PLU applicable à votre parcelle dans le 3e arrondissement de Paris, vous pouvez consulter le site officiel de la Ville de Paris ou vous rendre en mairie. Ces documents vous fourniront des informations sur les règles d'urbanisme et les contraintes spécifiques à respecter pour votre projet."
+      },
+      {
+        "question": "Quelles sont les étapes pour obtenir une autorisation de travaux ?",
+        "answer": "Pour obtenir une autorisation de travaux, il faut d'abord constituer un dossier comprenant les plans de votre projet et une description des travaux. Ensuite, déposez-le à la mairie de Paris. Le délai d'instruction peut varier, alors pensez à anticiper votre demande en fonction de la nature des travaux."
+      },
+      {
+        "question": "Dois-je informer mes voisins de mes travaux de rénovation ?",
+        "answer": "Oui, il est recommandé d'informer vos voisins de vos travaux, surtout si ceux-ci peuvent engendrer des nuisances sonores ou des perturbations. Cela peut aider à maintenir de bonnes relations de voisinage et à éviter d'éventuels conflits."
+      }
+    ],
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:56:53.227Z",
+      "attempts": 1,
+      "maxSimilarity": 0.1921182266009852,
+      "sourceHash": "0043d1120365e625898f4862f556279f84ab0edb5b5da0d74e6c4f5e20d8c175"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 4e Arrondissement : études préalables nécessaires pour les immeubles haussmanniens",
+    "accessNotice": "Avant d'entamer des travaux de rénovation, il est recommandé de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Selon la nature des travaux envisagés, une autorisation pourrait être requise. Si votre immeuble est en copropriété, assurez-vous de consulter le règlement de la copropriété. Prévoyez également une veille sur les horaires de travaux et les nuisances sonores à respecter pendant l'intervention pour éviter tout conflit avec les voisins et le syndic.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU applicable à ma propriété à Paris 4e ?",
+        "answer": "Vous pouvez consulter le Plan Local d'Urbanisme (PLU) de Paris sur le site de la Ville de Paris. Il vous renseignera sur les règles d'urbanisme applicables, comme la hauteur des constructions et les éléments à respecter pour vos travaux."
+      },
+      {
+        "question": "Quelles autorisations dois-je obtenir avant de commencer des travaux ?",
+        "answer": "Selon la nature de vos travaux, vous devrez peut-être demander un permis de construire ou une déclaration préalable. Contactez le service d'urbanisme de la mairie pour connaître les spécificités en fonction de votre projet."
+      },
+      {
+        "question": "Y a-t-il des contraintes à respecter en copropriété lors de rénovations ?",
+        "answer": "Oui, il est essentiel de consulter le règlement de copropriété qui peut imposer des contraintes sur les horaires de travaux, les types de matériaux utilisés ou l'apparence extérieure de l'immeuble, affectant ainsi votre projet de rénovation."
+      }
+    ],
+    "slug": "paris-4e-75004",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:50:56.917Z",
+      "attempts": 3,
+      "maxSimilarity": 0.0970873786407767,
+      "sourceHash": "1a509b02d5a417e9c0d4d5a4bb647735c2e83dff5b6853a1a3042e361788ffa7"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 5e Arrondissement : conseils pour votre projet",
+    "accessNotice": "Avant de commencer les travaux en Paris 5e, il est crucial de vérifier le Plan Local d'Urbanisme (PLU) pour votre parcelle afin de connaître les contraintes architecturales. Si votre maison est située dans une zone protégée, une demande de l'Architecte des Bâtiments de France (ABF) peut être nécessaire. Pensez également à étudier le règlement de copropriété si vous êtes en immeuble. Préparez les livraisons pour éviter les désagréments durant les travaux.",
+    "faq": [
+      {
+        "question": "Quels documents dois-je vérifier avant de rénover ma maison à Paris 5e ?",
+        "answer": "Avant de commencer une rénovation dans le 5e arrondissement, il est essentiel de consulter le Plan Local d'Urbanisme (PLU) pour connaître les règles spécifiques qui s'appliquent à votre parcelle. Cela inclut les restrictions sur les extensions et les modifications extérieures."
+      },
+      {
+        "question": "Quelles sont les contraintes si mon appartement se trouve en copropriété ?",
+        "answer": "Si vous réalisez des travaux dans un appartement en copropriété à Paris 5e, vérifiez le règlement de copropriété. Ce document peut imposer des restrictions sur certaines modifications et vous devrez peut-être obtenir l'autorisation de l'assemblée générale."
+      },
+      {
+        "question": "Comment puis-je préparer l'accès pour les livraisons de matériaux ?",
+        "answer": "Pour préparer les livraisons à Paris 5e, identifiez les accès disponibles et anticipez les horaires d'arrivée. Si un espace public est requis pour le stationnement de camions de livraison, une demande d'occupation temporaire de l'espace public auprès de la mairie peut être nécessaire."
+      }
+    ],
+    "slug": "paris-5e-75005",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:55:23.102Z",
+      "attempts": 2,
+      "maxSimilarity": 0.12048192771084337,
+      "sourceHash": "624d5d947c1027f893991c52ace64f1ff5e4d2caf13d6d80a9ec109913cd900a"
+    }
+  },
+  {
+    "headline": "Rénovation d'appartement à Paris 6e Arrondissement : conseils pratiques",
+    "accessNotice": "Avant de commencer des travaux de rénovation dans un appartement du 6e arrondissement de Paris, il est conseillé de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Renseignez-vous également sur les règles de copropriété qui pourraient influencer vos projets. Si votre bâtiment est en secteur protégé, une autorisation de l'Architecte des Bâtiments de France (ABF) pourrait être nécessaire. Pensez à organiser les livraisons de matériaux en tenant compte des accès étroits que vous pourriez rencontrer dans ce type d'habitat.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour mon appartement à Paris 6e ?",
+        "answer": "Pour consulter le PLU applicable à votre parcelle dans le 6e arrondissement, vous pouvez vous rendre sur le site de la Ville de Paris ou contacter le service d'urbanisme de votre mairie. Cela vous permettra de connaître les règles spécifiques concernant les travaux autorisés et les éventuelles restrictions."
+      },
+      {
+        "question": "Quelles sont les contraintes de copropriété à prendre en compte ?",
+        "answer": "Les règles de copropriété peuvent varier d'un immeuble à l'autre. Il est donc essentiel de consulter le règlement de copropriété de votre appartement avant d'entreprendre des travaux. Cela inclut des restrictions sur les heures de travaux, les modifications extérieures et l'utilisation des parties communes."
+      },
+      {
+        "question": "Dois-je demander une autorisation pour des travaux dans un secteur protégé ?",
+        "answer": "Si votre appartement est situé dans un secteur protégé, il est probable que vous ayez besoin d'une autorisation de l'Architecte des Bâtiments de France (ABF) pour vos travaux. Renseignez-vous auprès de la mairie ou du service d'urbanisme pour connaître les démarches spécifiques à suivre."
+      }
+    ],
+    "slug": "paris-6e-75006",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:51:16.186Z",
+      "attempts": 1,
+      "maxSimilarity": 0.16312056737588654,
+      "sourceHash": "bb06e36f28acf2b85c5ff475989e9425d05d179cfdd10a8e6d7ebffafe3ce8f9"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 7e Arrondissement : Conseils pour votre projet",
+    "accessNotice": "Avant de commencer des travaux de rénovation à Paris 7e, il est conseillé de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Si votre bâtiment est en secteur protégé, une autorisation de l'Architecte des Bâtiments de France (ABF) pourrait être nécessaire. Pensez également à consulter le règlement de copropriété pour les contraintes spécifiques. Enfin, préparez les livraisons en tenant compte des accès et des horaires autorisés pour les travaux.",
+    "faq": [
+      {
+        "question": "Quels documents dois-je vérifier avant de commencer des travaux de rénovation à Paris 7e ?",
+        "answer": "Avant de débuter des travaux de rénovation, il est essentiel de consulter le Plan Local d'Urbanisme (PLU) pour connaître les règles applicables à votre parcelle. De plus, si votre bâtiment est classé ou situé dans un secteur protégé, une demande d'autorisation auprès de l'Architecte des Bâtiments de France (ABF) pourrait être requise."
+      },
+      {
+        "question": "Comment savoir si je dois respecter des horaires de travaux à Paris 7e ?",
+        "answer": "Les horaires de travaux peuvent être réglementés par la mairie. Il est recommandé de vérifier les règles de bruit spécifiques à Paris 7e, car certaines périodes peuvent être interdites pour éviter les nuisances sonores. Consultez le site de la Ville de Paris pour des informations détaillées sur ce sujet."
+      },
+      {
+        "question": "Quelles sont les étapes pour préparer les livraisons lors de travaux de rénovation ?",
+        "answer": "Pour préparer les livraisons lors de vos travaux, assurez-vous d'anticiper l'accès au bâtiment. Vérifiez les restrictions de stationnement et les autorisations nécessaires pour l'occupation de l'espace public. Il est également judicieux de coordonner les horaires de livraison avec les travaux pour éviter les retards."
+      }
+    ],
+    "slug": "paris-7e-75007",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:51:24.182Z",
+      "attempts": 1,
+      "maxSimilarity": 0.1325581395348837,
+      "sourceHash": "f4ee1623d4607f5f2b4757abdcd30a00263143b429c58a5ebdfd30d6282a153e"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 8e Arrondissement : conseils pour réussir vos travaux",
+    "accessNotice": "Avant d'engager des travaux à Paris 8e, assurez-vous de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre bien. Cela vous permettra de connaître les règles de construction et les éventuelles restrictions. Si vous êtes en copropriété, consultez le règlement pour éviter des conflits. Anticipez également les livraisons et les nuisances sonores en vous renseignant sur les horaires autorisés pour les travaux, afin de ne pas gêner les voisins.",
+    "faq": [
+      {
+        "question": "Quels documents devrais-je préparer pour mes travaux de rénovation à Paris 8e ?",
+        "answer": "Vous devez consulter le Plan Local d'Urbanisme (PLU) pour connaître les règles spécifiques à votre bien. Selon l'ampleur des travaux, il peut également être nécessaire d'obtenir une autorisation de travaux ou un permis de construire, surtout si votre immeuble est en copropriété."
+      },
+      {
+        "question": "Comment gérer les nuisances sonores liées à mes travaux ?",
+        "answer": "À Paris 8e, il est essentiel de se conformer aux règles de bruit. Renseignez-vous auprès de la mairie sur les horaires autorisés pour effectuer des travaux bruyants. Informez également vos voisins à l'avance pour maintenir de bonnes relations de voisinage."
+      },
+      {
+        "question": "Quelles sont les étapes pour demander un stationnement de chantier ?",
+        "answer": "Il vous faudra faire une demande d'occupation de l'espace public pour le stationnement de vos véhicules de chantier. Cette demande peut être faite via le site de la Ville de Paris. Assurez-vous de répondre aux exigences pour éviter toute amende et garantir la disponibilité de l'espace."
+      }
+    ],
+    "slug": "paris-8e-75008",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:51:37.040Z",
+      "attempts": 2,
+      "maxSimilarity": 0.12682926829268293,
+      "sourceHash": "003bf628109dc69d6e7188dc7a09eee88906f16fe9a10a8892d35c6c14dd7154"
+    }
+  },
+  {
+    "headline": "Rénovation à Paris 9e Arrondissement : conseils pratiques pour votre projet",
+    "accessNotice": "Avant de commencer des travaux de rénovation à Paris 9e, il est conseillé de vérifier le Plan Local d'Urbanisme (PLU) applicable à votre parcelle. Cela vous permettra de connaître les règles spécifiques à respecter. Si votre bâtiment est en copropriété, consultez le règlement de copropriété pour identifier les contraintes éventuelles. Pensez également à préparer les livraisons en tenant compte des accès possibles, notamment si vous devez passer par un porche ou un escalier étroit.",
+    "faq": [
+      {
+        "question": "Comment vérifier le PLU pour ma rénovation à Paris 9e ?",
+        "answer": "Pour vérifier le PLU à Paris 9e, vous pouvez consulter le site de la Ville de Paris ou vous rendre directement à la mairie. Cela vous permettra d'obtenir des informations précises sur les règles d'urbanisme qui s'appliquent à votre projet de rénovation."
+      },
+      {
+        "question": "Quelles sont les contraintes liées à la copropriété lors de travaux ?",
+        "answer": "En cas de travaux dans un immeuble en copropriété à Paris 9e, il est essentiel de consulter le règlement de copropriété. Ce document peut contenir des restrictions sur les types de travaux autorisés et les horaires d'intervention, afin de minimiser les nuisances pour les autres occupants."
+      },
+      {
+        "question": "Comment gérer les livraisons de matériaux pour ma rénovation ?",
+        "answer": "Pour gérer les livraisons de matériaux à Paris 9e, pensez à planifier les horaires en fonction des accès à votre bâtiment. Si vous devez utiliser un espace public pour le stationnement d'un camion, vérifiez si une autorisation est nécessaire auprès de la mairie."
+      }
+    ],
+    "slug": "paris-9e-75009",
+    "vertical": "renovation",
+    "departmentCode": "75",
+    "generation": {
+      "model": "gpt-4o-mini",
+      "generatedAt": "2026-10-03T08:51:46.538Z",
+      "attempts": 1,
+      "maxSimilarity": 0.22081218274111675,
+      "sourceHash": "fb749b8b481ea717c370bfabcd07ee5e956784e55f82695116952b57e03b1afc"
+    }
+  }
+]

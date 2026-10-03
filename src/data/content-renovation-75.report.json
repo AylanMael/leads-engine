@@ -1,0 +1,113 @@
+{
+  "generatedAt": "2026-10-03T08:56:53.937Z",
+  "departmentCode": "75",
+  "vertical": "renovation",
+  "total": 20,
+  "validated": 20,
+  "threshold": 0.25,
+  "maximumSimilarity": 0.23314606741573032,
+  "comparisons": [
+    {
+      "slug": "paris-10e-75010",
+      "comparedWith": "paris-20e-75020",
+      "score": 0.23314606741573032
+    },
+    {
+      "slug": "paris-11e-75011",
+      "comparedWith": "paris-18e-75018",
+      "score": 0.20572916666666666
+    },
+    {
+      "slug": "paris-12e-75012",
+      "comparedWith": "paris-7e-75007",
+      "score": 0.0855106888361045
+    },
+    {
+      "slug": "paris-13e-75013",
+      "comparedWith": "paris-9e-75009",
+      "score": 0.20157068062827224
+    },
+    {
+      "slug": "paris-14e-75014",
+      "comparedWith": "paris-18e-75018",
+      "score": 0.1383219954648526
+    },
+    {
+      "slug": "paris-15e-75015",
+      "comparedWith": "paris-9e-75009",
+      "score": 0.18045112781954886
+    },
+    {
+      "slug": "paris-16e-75016",
+      "comparedWith": "paris-6e-75006",
+      "score": 0.13849765258215962
+    },
+    {
+      "slug": "paris-17e-75017",
+      "comparedWith": "paris-3e-75003",
+      "score": 0.1807511737089202
+    },
+    {
+      "slug": "paris-18e-75018",
+      "comparedWith": "paris-11e-75011",
+      "score": 0.20572916666666666
+    },
+    {
+      "slug": "paris-19e-75019",
+      "comparedWith": "paris-2e-75002",
+      "score": 0.09333333333333334
+    },
+    {
+      "slug": "paris-1er-75001",
+      "comparedWith": "paris-18e-75018",
+      "score": 0.1989795918367347
+    },
+    {
+      "slug": "paris-20e-75020",
+      "comparedWith": "paris-10e-75010",
+      "score": 0.23314606741573032
+    },
+    {
+      "slug": "paris-2e-75002",
+      "comparedWith": "paris-20e-75020",
+      "score": 0.22432432432432434
+    },
+    {
+      "slug": "paris-3e-75003",
+      "comparedWith": "paris-11e-75011",
+      "score": 0.1921182266009852
+    },
+    {
+      "slug": "paris-4e-75004",
+      "comparedWith": "paris-17e-75017",
+      "score": 0.12529550827423167
+    },
+    {
+      "slug": "paris-5e-75005",
+      "comparedWith": "paris-7e-75007",
+      "score": 0.12048192771084337
+    },
+    {
+      "slug": "paris-6e-75006",
+      "comparedWith": "paris-17e-75017",
+      "score": 0.17715617715617715
+    },
+    {
+      "slug": "paris-7e-75007",
+      "comparedWith": "paris-11e-75011",
+      "score": 0.16296296296296298
+    },
+    {
+      "slug": "paris-8e-75008",
+      "comparedWith": "paris-7e-75007",
+      "score": 0.09345794392523364
+    },
+    {
+      "slug": "paris-9e-75009",
+      "comparedWith": "paris-13e-75013",
+      "score": 0.20157068062827224
+    }
+  ],
+  "rejected": [],
+  "remaining": []
+}

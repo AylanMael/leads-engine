@@ -1,0 +1,193 @@
+{
+  "generatedAt": "2026-10-03T08:55:53.426Z",
+  "departmentCode": "92",
+  "vertical": "renovation",
+  "total": 36,
+  "validated": 36,
+  "threshold": 0.25,
+  "maximumSimilarity": 0.25,
+  "comparisons": [
+    {
+      "slug": "antony-92160",
+      "comparedWith": "fontenay-aux-roses-92260",
+      "score": 0.2404692082111437
+    },
+    {
+      "slug": "asnieres-sur-seine-92600",
+      "comparedWith": "fontenay-aux-roses-92260",
+      "score": 0.24225352112676057
+    },
+    {
+      "slug": "bagneux-92220",
+      "comparedWith": "issy-les-moulineaux-92130",
+      "score": 0.08418367346938775
+    },
+    {
+      "slug": "bois-colombes-92270",
+      "comparedWith": "clamart-92140",
+      "score": 0.2235294117647059
+    },
+    {
+      "slug": "boulogne-billancourt-92100",
+      "comparedWith": "gennevilliers-92230",
+      "score": 0.16358839050131926
+    },
+    {
+      "slug": "bourg-la-reine-92340",
+      "comparedWith": "clamart-92140",
+      "score": 0.21635883905013192
+    },
+    {
+      "slug": "chatenay-malabry-92290",
+      "comparedWith": "ville-d-avray-92410",
+      "score": 0.1534526854219949
+    },
+    {
+      "slug": "chatillon-92320",
+      "comparedWith": "saint-cloud-92210",
+      "score": 0.2154255319148936
+    },
+    {
+      "slug": "chaville-92370",
+      "comparedWith": "fontenay-aux-roses-92260",
+      "score": 0.22096317280453256
+    },
+    {
+      "slug": "clamart-92140",
+      "comparedWith": "courbevoie-92400",
+      "score": 0.22740524781341107
+    },
+    {
+      "slug": "clichy-92110",
+      "comparedWith": "courbevoie-92400",
+      "score": 0.18926553672316385
+    },
+    {
+      "slug": "colombes-92700",
+      "comparedWith": "gennevilliers-92230",
+      "score": 0.22281167108753316
+    },
+    {
+      "slug": "courbevoie-92400",
+      "comparedWith": "clamart-92140",
+      "score": 0.22740524781341107
+    },
+    {
+      "slug": "fontenay-aux-roses-92260",
+      "comparedWith": "asnieres-sur-seine-92600",
+      "score": 0.24225352112676057
+    },
+    {
+      "slug": "garches-92380",
+      "comparedWith": "nanterre-92000",
+      "score": 0.25
+    },
+    {
+      "slug": "gennevilliers-92230",
+      "comparedWith": "courbevoie-92400",
+      "score": 0.22701149425287356
+    },
+    {
+      "slug": "issy-les-moulineaux-92130",
+      "comparedWith": "fontenay-aux-roses-92260",
+      "score": 0.20630372492836677
+    },
+    {
+      "slug": "la-garenne-colombes-92250",
+      "comparedWith": "fontenay-aux-roses-92260",
+      "score": 0.18622448979591838
+    },
+    {
+      "slug": "le-plessis-robinson-92350",
+      "comparedWith": "nanterre-92000",
+      "score": 0.20498614958448755
+    },
+    {
+      "slug": "levallois-perret-92300",
+      "comparedWith": "fontenay-aux-roses-92260",
+      "score": 0.21098265895953758
+    },
+    {
+      "slug": "malakoff-92240",
+      "comparedWith": "suresnes-92150",
+      "score": 0.22527472527472528
+    },
+    {
+      "slug": "marnes-la-coquette-92430",
+      "comparedWith": "neuilly-sur-seine-92200",
+      "score": 0.16795865633074936
+    },
+    {
+      "slug": "meudon-92190",
+      "comparedWith": "rueil-malmaison-92500",
+      "score": 0.20789473684210527
+    },
+    {
+      "slug": "montrouge-92120",
+      "comparedWith": "sceaux-92330",
+      "score": 0.246684350132626
+    },
+    {
+      "slug": "nanterre-92000",
+      "comparedWith": "garches-92380",
+      "score": 0.25
+    },
+    {
+      "slug": "neuilly-sur-seine-92200",
+      "comparedWith": "marnes-la-coquette-92430",
+      "score": 0.16795865633074936
+    },
+    {
+      "slug": "puteaux-92800",
+      "comparedWith": "courbevoie-92400",
+      "score": 0.17142857142857143
+    },
+    {
+      "slug": "rueil-malmaison-92500",
+      "comparedWith": "clamart-92140",
+      "score": 0.2098092643051771
+    },
+    {
+      "slug": "saint-cloud-92210",
+      "comparedWith": "nanterre-92000",
+      "score": 0.24285714285714285
+    },
+    {
+      "slug": "sceaux-92330",
+      "comparedWith": "montrouge-92120",
+      "score": 0.246684350132626
+    },
+    {
+      "slug": "sevres-92310",
+      "comparedWith": "fontenay-aux-roses-92260",
+      "score": 0.1368421052631579
+    },
+    {
+      "slug": "suresnes-92150",
+      "comparedWith": "malakoff-92240",
+      "score": 0.22527472527472528
+    },
+    {
+      "slug": "vanves-92170",
+      "comparedWith": "saint-cloud-92210",
+      "score": 0.2077922077922078
+    },
+    {
+      "slug": "vaucresson-92420",
+      "comparedWith": "issy-les-moulineaux-92130",
+      "score": 0.13144329896907217
+    },
+    {
+      "slug": "ville-d-avray-92410",
+      "comparedWith": "bois-colombes-92270",
+      "score": 0.2208955223880597
+    },
+    {
+      "slug": "villeneuve-la-garenne-92390",
+      "comparedWith": "antony-92160",
+      "score": 0.2062146892655367
+    }
+  ],
+  "rejected": [],
+  "remaining": []
+}

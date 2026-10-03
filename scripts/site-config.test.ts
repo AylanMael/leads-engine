@@ -4,7 +4,7 @@ import { getSiteConfig, getCanonicalUrl, getSiteMetadata, getOrganization } from
 import { getTenantConfig } from "../src/config/tenant";
 import sitemap from "../src/app/sitemap";
 import robots from "../src/app/robots";
-import cities from "../src/data/cities-78.json";
+import { ALL_CITIES as cities } from "../src/data/cities";
 
 test("chaque déploiement partage sa marque entre affichage, SEO, sitemap et robots", () => {
   const previous = process.env.NEXT_PUBLIC_VERTICAL;
@@ -21,9 +21,9 @@ test("chaque déploiement partage sa marque entre affichage, SEO, sitemap et rob
       assert.equal(getOrganization(site).url, `${domain}/`);
       assert.equal(robots().sitemap, `${domain}/sitemap.xml`);
       const entries = sitemap();
-      assert.equal(entries.length, cities.length + 1);
+      assert.equal(entries.length, cities.length + 2);
       assert.equal(entries[0].url, `${domain}/`);
-      assert.ok(entries.slice(1).every(({ url }) => url.startsWith(`${domain}/${vertical}/`)));
+      assert.ok(entries.slice(2).every(({ url }) => url.startsWith(`${domain}/${vertical}/`)));
       assert.equal(new Set(entries.map(({ url }) => url)).size, entries.length);
     }
     delete process.env.NEXT_PUBLIC_VERTICAL;

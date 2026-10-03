@@ -2,10 +2,9 @@ import { getSiteConfig, getCanonicalUrl } from "../../../config/site";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PublicLanding from "../../../components/PublicLanding";
-import generatedContent from "../../../data/content-renovation-78.json";
-import { buildCityCatalogue } from "../../../data/local-cities";
+import { getCityCatalogue } from "../../../data/local-cities";
 
-const cities = buildCityCatalogue(generatedContent, "renovation");
+const cities = getCityCatalogue( "renovation");
 
 type LocalPageProps = { params: Promise<{ slug: string }> };
 

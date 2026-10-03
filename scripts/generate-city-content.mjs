@@ -8,6 +8,7 @@ import { createHash, randomUUID } from "node:crypto";
 import { loadEnvFile } from "node:process";
 import { setTimeout as delay } from "node:timers/promises";
 import { z } from "zod";
+import { DEPARTMENT_CONTEXT, validateDepartmentContent } from "../src/lib/department-context.mjs";
 import { ContentSchema, SIMILARITY_THRESHOLD, closestMatch, contentText, validateCatalogue, validateContent } from "../src/lib/city-content.mjs";
 export { ContentSchema, SIMILARITY_THRESHOLD, closestMatch, contentText, jaccard, wordTrigrams, validateContent } from "../src/lib/city-content.mjs";
 
@@ -57,6 +58,7 @@ export async function generateCity(city, vertical, accepted, generate) {
     const raw = await generate({ city, vertical, attempt, temperature: temperatures[attempt], feedback, avoid });
     try {
       const content = validateContent(raw);
+      validateDepartmentContent(content, city, vertical);
       const nearest = closestMatch(content, city, accepted);
       if (nearest.score > SIMILARITY_THRESHOLD) {
         avoid = accepted.find(({ slug }) => slug === nearest.slug);
@@ -84,6 +86,7 @@ export function createGenerator({ apiKey, model, fetchImpl = fetch, wait = delay
     ];
     let response;
     for (let networkAttempt = 0; networkAttempt < 3; networkAttempt++) {
+      try {
       response = await fetchImpl("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
@@ -95,11 +98,17 @@ export function createGenerator({ apiKey, model, fetchImpl = fetch, wait = delay
             { role: "system", content: SYSTEM_PROMPT },
             { role: "user", content: JSON.stringify({
               vertical, city: { ...city, context }, angle: angles[attempt], previousRejection: feedback,
+              departmentContext: DEPARTMENT_CONTEXT[city.departmentCode] ?? null,
               textToAvoid: avoid ? contentText(avoid) : null,
             }) },
           ],
         }),
       });
+      } catch (error) {
+        if (networkAttempt === 2) throw error;
+        await wait(1000 * 2 ** networkAttempt);
+        continue;
+      }
       if (![429, 502, 503, 504].includes(response.status) || networkAttempt === 2) break;
       const retryAfter = Number(response.headers?.get("retry-after"));
       await wait(Math.min(10000, Math.max(1000 * 2 ** networkAttempt, Number.isFinite(retryAfter) ? retryAfter * 1000 : 0)));
@@ -128,7 +137,7 @@ async function atomicWrite(path, data) {
 }
 
 export function sourceHash(city) {
-  return createHash("sha256").update(JSON.stringify({ version: 2, city })).digest("hex");
+  return createHash("sha256").update(JSON.stringify({ version: 2, city, ...(DEPARTMENT_CONTEXT[city.departmentCode] ? { departmentContext: DEPARTMENT_CONTEXT[city.departmentCode] } : {}) })).digest("hex");
 }
 
 export async function main(args = process.argv.slice(2)) {
@@ -150,7 +159,9 @@ export async function main(args = process.argv.slice(2)) {
     const bySlug = new Map([...existing, ...saved].map((row) => [row.slug, row]));
     const accepted = cities.flatMap((city) => {
       const row = bySlug.get(city.slug);
-      return row?.generation.sourceHash === sourceHash(city) ? [row] : [];
+      if (row?.generation.sourceHash !== sourceHash(city)) return [];
+      try { validateDepartmentContent(row, city, vertical); return [row]; }
+      catch { return []; }
     });
     validateCatalogue(accepted, vertical, departmentCode);
     const pending = cities.filter((city) => !accepted.some((row) => row.slug === city.slug));

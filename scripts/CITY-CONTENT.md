@@ -1,7 +1,9 @@
 # Contenus locaux
 
-Le catalogue `src/data/cities-78.json` contient actuellement **90 communes**.
-Les deux générations couvrent donc 180 pages, sans réduire silencieusement la liste à 40.
+Les catalogues contiennent **90 communes des Yvelines**, **36 communes des Hauts-de-Seine**
+et **20 arrondissements parisiens**, soit **146 zones et 292 pages pour les deux marques**.
+`src/data/cities.ts` alimente le maillage, le sitemap et la page `/communes`.
+`src/data/local-cities.ts` associe les six fichiers de contenu et alimente les routes locales.
 
 ## Configuration
 
@@ -24,6 +26,11 @@ l’environnement restent prioritaires. Il ne lit ni ne transmet les leads ou pa
 ```sh
 node scripts/generate-city-content.mjs demenagement
 node scripts/generate-city-content.mjs renovation
+node scripts/fetch-expansion-cities.mjs
+node scripts/generate-content.mjs demenagement src/data/cities-92.json
+node scripts/generate-content.mjs renovation src/data/cities-92.json
+node scripts/generate-content.mjs demenagement src/data/cities-75.json
+node scripts/generate-content.mjs renovation src/data/cities-75.json
 npm run build
 ```
 
@@ -34,8 +41,8 @@ node scripts/generate-city-content.mjs renovation src/data/cities-78.json
 ```
 
 L’ancien ordre `<communes.json> <vertical>` reste accepté.
-Les sorties finales sont `src/data/content-demenagement-78.json` et
-`src/data/content-renovation-78.json`, importées directement par les pages Next.js.
+Les sorties finales suivent `src/data/content-[vertical]-[département].json`,
+importées statiquement par le catalogue des pages Next.js.
 Chaque entrée contient `slug`, `vertical`, `departmentCode`, `headline`,
 `accessNotice`, trois FAQ et les métadonnées de génération.
 
@@ -56,8 +63,17 @@ Chaque entrée contient `slug`, `vertical`, `departmentCode`, `headline`,
 
 Tests sans appel payant : `node scripts/generate-city-content.test.mjs`.
 Le build valide de nouveau le schéma et les similarités des fichiers importés.
+Il refuse également une commune sans contenu et les anomalies couvertes par les garde-fous départementaux.
+Tests de couverture : `node --conditions=react-server --import tsx scripts/local-catalogue.test.ts`.
 
 ## Sources et limites éditoriales
+
+`fetch-expansion-cities.mjs` utilise l’API officielle `geo.api.gouv.fr`, sans seuil
+de population pour le 92, et son filtre `type=arrondissement-municipal` pour Paris.
+Les profils de `src/lib/department-context.mjs` contiennent les contraintes et leurs sources.
+À Paris, l’AOT déménagement dépend de la Ville de Paris ; l’occupation liée aux travaux
+est distincte (CITE). Les horaires chiffrés non documentés et certaines confusions
+administratives sont rejetés. Ces contrôles ne remplacent pas une relecture éditoriale.
 
 Les champs « À enrichir » du fichier d’extraction ne constituent pas des faits.
 Pour fournir des repères réels et des prescriptions locales, enrichir les contextes

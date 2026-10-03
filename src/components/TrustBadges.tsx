@@ -4,7 +4,7 @@ const promises = [
   { icon: ShieldCheck, title: "Choisir en confiance", text: "SIRET actif et assurance à jour : les documents à vérifier avant de signer." },
   { icon: Scale, title: "Comparez librement", text: "Vous gardez le choix du professionnel. Aucune obligation de donner suite." },
   { icon: LockKeyhole, title: "Zéro démarchage inutile", text: "Vos coordonnées sont transmises à 2 professionnels concernés au maximum." },
-  { icon: MapPin, title: "Ancrage Yvelines", text: "Une mise en relation selon votre commune et le secteur d’intervention." },
+  { icon: MapPin, title: "Ancrage local", text: "Une mise en relation selon votre commune et le secteur d’intervention." },
 ];
 
 export default function TrustBadges() {

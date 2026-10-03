@@ -1,0 +1,402 @@
+[
+  {
+    "slug": "paris-1er-75001",
+    "name": "Paris 1er Arrondissement",
+    "postalCode": "75001",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75101",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 1er Arrondissement : code INSEE 75101, code postal 75001.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-2e-75002",
+    "name": "Paris 2e Arrondissement",
+    "postalCode": "75002",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75102",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 2e Arrondissement : code INSEE 75102, code postal 75002.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-3e-75003",
+    "name": "Paris 3e Arrondissement",
+    "postalCode": "75003",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75103",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 3e Arrondissement : code INSEE 75103, code postal 75003.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-4e-75004",
+    "name": "Paris 4e Arrondissement",
+    "postalCode": "75004",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75104",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 4e Arrondissement : code INSEE 75104, code postal 75004.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-5e-75005",
+    "name": "Paris 5e Arrondissement",
+    "postalCode": "75005",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75105",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 5e Arrondissement : code INSEE 75105, code postal 75005.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-6e-75006",
+    "name": "Paris 6e Arrondissement",
+    "postalCode": "75006",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75106",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 6e Arrondissement : code INSEE 75106, code postal 75006.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-7e-75007",
+    "name": "Paris 7e Arrondissement",
+    "postalCode": "75007",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75107",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 7e Arrondissement : code INSEE 75107, code postal 75007.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-8e-75008",
+    "name": "Paris 8e Arrondissement",
+    "postalCode": "75008",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75108",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 8e Arrondissement : code INSEE 75108, code postal 75008.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-9e-75009",
+    "name": "Paris 9e Arrondissement",
+    "postalCode": "75009",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75109",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 9e Arrondissement : code INSEE 75109, code postal 75009.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-10e-75010",
+    "name": "Paris 10e Arrondissement",
+    "postalCode": "75010",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75110",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 10e Arrondissement : code INSEE 75110, code postal 75010.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-11e-75011",
+    "name": "Paris 11e Arrondissement",
+    "postalCode": "75011",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75111",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 11e Arrondissement : code INSEE 75111, code postal 75011.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-12e-75012",
+    "name": "Paris 12e Arrondissement",
+    "postalCode": "75012",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75112",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 12e Arrondissement : code INSEE 75112, code postal 75012.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-13e-75013",
+    "name": "Paris 13e Arrondissement",
+    "postalCode": "75013",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75113",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 13e Arrondissement : code INSEE 75113, code postal 75013.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-14e-75014",
+    "name": "Paris 14e Arrondissement",
+    "postalCode": "75014",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75114",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 14e Arrondissement : code INSEE 75114, code postal 75014.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-15e-75015",
+    "name": "Paris 15e Arrondissement",
+    "postalCode": "75015",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75115",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 15e Arrondissement : code INSEE 75115, code postal 75015.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-16e-75016",
+    "name": "Paris 16e Arrondissement",
+    "postalCode": "75016",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75116",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 16e Arrondissement : code INSEE 75116, code postal 75016.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-17e-75017",
+    "name": "Paris 17e Arrondissement",
+    "postalCode": "75017",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75117",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 17e Arrondissement : code INSEE 75117, code postal 75017.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-18e-75018",
+    "name": "Paris 18e Arrondissement",
+    "postalCode": "75018",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75118",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 18e Arrondissement : code INSEE 75118, code postal 75018.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-19e-75019",
+    "name": "Paris 19e Arrondissement",
+    "postalCode": "75019",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75119",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 19e Arrondissement : code INSEE 75119, code postal 75019.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  },
+  {
+    "slug": "paris-20e-75020",
+    "name": "Paris 20e Arrondissement",
+    "postalCode": "75020",
+    "departmentCode": "75",
+    "departmentName": "Paris",
+    "inseeCode": "75120",
+    "context": {
+      "housingType": "À enrichir : caractéristiques à vérifier à l’adresse du projet.",
+      "trafficNote": "À enrichir : accès et démarches locales.",
+      "neighborhoods": []
+    },
+    "faq": [],
+    "localFacts": [
+      {
+        "fact": "Paris 20e Arrondissement : code INSEE 75120, code postal 75020.",
+        "source": "https://geo.api.gouv.fr/communes?codeDepartement=75&type=arrondissement-municipal&fields=nom,code,codesPostaux"
+      }
+    ]
+  }
+]

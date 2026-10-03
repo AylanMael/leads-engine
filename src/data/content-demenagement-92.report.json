@@ -1,0 +1,193 @@
+{
+  "generatedAt": "2026-10-03T08:55:05.672Z",
+  "departmentCode": "92",
+  "vertical": "demenagement",
+  "total": 36,
+  "validated": 36,
+  "threshold": 0.25,
+  "maximumSimilarity": 0.18051575931232092,
+  "comparisons": [
+    {
+      "slug": "nanterre-92000",
+      "comparedWith": "ville-d-avray-92410",
+      "score": 0.1675531914893617
+    },
+    {
+      "slug": "boulogne-billancourt-92100",
+      "comparedWith": "courbevoie-92400",
+      "score": 0.16
+    },
+    {
+      "slug": "clichy-92110",
+      "comparedWith": "clamart-92140",
+      "score": 0.16298342541436464
+    },
+    {
+      "slug": "montrouge-92120",
+      "comparedWith": "villeneuve-la-garenne-92390",
+      "score": 0.17714285714285713
+    },
+    {
+      "slug": "issy-les-moulineaux-92130",
+      "comparedWith": "villeneuve-la-garenne-92390",
+      "score": 0.16804407713498623
+    },
+    {
+      "slug": "clamart-92140",
+      "comparedWith": "clichy-92110",
+      "score": 0.16298342541436464
+    },
+    {
+      "slug": "suresnes-92150",
+      "comparedWith": "levallois-perret-92300",
+      "score": 0.16172506738544473
+    },
+    {
+      "slug": "antony-92160",
+      "comparedWith": "fontenay-aux-roses-92260",
+      "score": 0.1564102564102564
+    },
+    {
+      "slug": "vanves-92170",
+      "comparedWith": "le-plessis-robinson-92350",
+      "score": 0.17251461988304093
+    },
+    {
+      "slug": "meudon-92190",
+      "comparedWith": "villeneuve-la-garenne-92390",
+      "score": 0.17159763313609466
+    },
+    {
+      "slug": "neuilly-sur-seine-92200",
+      "comparedWith": "chaville-92370",
+      "score": 0.1671388101983003
+    },
+    {
+      "slug": "saint-cloud-92210",
+      "comparedWith": "chatenay-malabry-92290",
+      "score": 0.175
+    },
+    {
+      "slug": "bagneux-92220",
+      "comparedWith": "gennevilliers-92230",
+      "score": 0.15463917525773196
+    },
+    {
+      "slug": "gennevilliers-92230",
+      "comparedWith": "meudon-92190",
+      "score": 0.16573033707865167
+    },
+    {
+      "slug": "malakoff-92240",
+      "comparedWith": "courbevoie-92400",
+      "score": 0.15384615384615385
+    },
+    {
+      "slug": "la-garenne-colombes-92250",
+      "comparedWith": "ville-d-avray-92410",
+      "score": 0.15240641711229946
+    },
+    {
+      "slug": "fontenay-aux-roses-92260",
+      "comparedWith": "neuilly-sur-seine-92200",
+      "score": 0.16112531969309463
+    },
+    {
+      "slug": "bois-colombes-92270",
+      "comparedWith": "chatenay-malabry-92290",
+      "score": 0.16138328530259366
+    },
+    {
+      "slug": "chatenay-malabry-92290",
+      "comparedWith": "saint-cloud-92210",
+      "score": 0.175
+    },
+    {
+      "slug": "levallois-perret-92300",
+      "comparedWith": "sevres-92310",
+      "score": 0.18051575931232092
+    },
+    {
+      "slug": "sevres-92310",
+      "comparedWith": "levallois-perret-92300",
+      "score": 0.18051575931232092
+    },
+    {
+      "slug": "chatillon-92320",
+      "comparedWith": "courbevoie-92400",
+      "score": 0.10594315245478036
+    },
+    {
+      "slug": "sceaux-92330",
+      "comparedWith": "levallois-perret-92300",
+      "score": 0.13066666666666665
+    },
+    {
+      "slug": "bourg-la-reine-92340",
+      "comparedWith": "chatenay-malabry-92290",
+      "score": 0.15512465373961218
+    },
+    {
+      "slug": "le-plessis-robinson-92350",
+      "comparedWith": "ville-d-avray-92410",
+      "score": 0.17971014492753623
+    },
+    {
+      "slug": "chaville-92370",
+      "comparedWith": "neuilly-sur-seine-92200",
+      "score": 0.1671388101983003
+    },
+    {
+      "slug": "garches-92380",
+      "comparedWith": "sevres-92310",
+      "score": 0.1554959785522788
+    },
+    {
+      "slug": "villeneuve-la-garenne-92390",
+      "comparedWith": "montrouge-92120",
+      "score": 0.17714285714285713
+    },
+    {
+      "slug": "courbevoie-92400",
+      "comparedWith": "montrouge-92120",
+      "score": 0.17027027027027028
+    },
+    {
+      "slug": "ville-d-avray-92410",
+      "comparedWith": "le-plessis-robinson-92350",
+      "score": 0.17971014492753623
+    },
+    {
+      "slug": "vaucresson-92420",
+      "comparedWith": "clamart-92140",
+      "score": 0.1368421052631579
+    },
+    {
+      "slug": "marnes-la-coquette-92430",
+      "comparedWith": "malakoff-92240",
+      "score": 0.1349862258953168
+    },
+    {
+      "slug": "rueil-malmaison-92500",
+      "comparedWith": "neuilly-sur-seine-92200",
+      "score": 0.14360313315926893
+    },
+    {
+      "slug": "asnieres-sur-seine-92600",
+      "comparedWith": "le-plessis-robinson-92350",
+      "score": 0.13866666666666666
+    },
+    {
+      "slug": "colombes-92700",
+      "comparedWith": "levallois-perret-92300",
+      "score": 0.17191977077363896
+    },
+    {
+      "slug": "puteaux-92800",
+      "comparedWith": "bois-colombes-92270",
+      "score": 0.1286549707602339
+    }
+  ],
+  "rejected": [],
+  "remaining": []
+}
