@@ -44,7 +44,12 @@ env:
     value: "Déménizo <notifications@demenizo.fr>"
     availability: [RUNTIME]
 
-  # Ajouter RESEND_API_KEY_RENOVATION et RESEND_API_KEY_DEMENAGEMENT
-  # après création des secrets et attribution de leurs accès au backend.
+  # Clés limitées à l'envoi pour chaque marque, stockées dans Secret Manager.
+  - variable: RESEND_API_KEY_RENOVATION
+    secret: resend-api-key-renovation
+    availability: [RUNTIME]
+  - variable: RESEND_API_KEY_DEMENAGEMENT
+    secret: resend-api-key-demenagement
+    availability: [RUNTIME]
 # Stripe reste désactivé en attendant son provisionnement.
 # Voir DEPLOYMENT.md. Les Cloud Functions ont leur propre configuration.

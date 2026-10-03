@@ -36,7 +36,7 @@ n'est nécessaire. La réception dans Resend reste désactivée.
 
 1. Enregistrements publiés chez OVH le 3 octobre 2026 (terminé).
 2. Domaines vérifiés dans Resend (terminé).
-3. Stocker les clés Resend par marque dans Secret Manager et attribuer les accès aux backends.
+3. Clés Resend par marque stockées dans Secret Manager et accès App Hosting attribués (terminé).
 4. Variables publiques enregistrées dans les deux backends (terminé) :
    `EMAIL_FROM`, `ADMIN_NOTIFICATION_EMAIL` et `NEXT_PUBLIC_SITE_URL`.
    Elles prendront effet au prochain déploiement.
@@ -50,9 +50,12 @@ commentés dans le modèle local. Aucune alerte réelle n'a encore été envoyé
 
 Les deux domaines sont désormais Verified dans Resend. Deux clés Sending access,
 limitées respectivement à renovizo.fr et demenizo.fr, ont été créées.
-La valeur de la première clé Rénovizo n’a pas pu être récupérée : cette clé
-inutilisée doit être révoquée et remplacée. La clé Déménizo a été récupérée.
-Le stockage dans Secret Manager reste bloqué par la reconnexion Google Cloud.
-Aucun secret Resend n’est encore référencé dans apphosting.yaml afin de ne pas
-bloquer les builds. Les variables publiques d’expéditeur et de destinataire
-sont prêtes. Aucune alerte réelle n’a encore été envoyée.
+La première clé Rénovizo inutilisée a été révoquée et remplacée.
+Les secrets `resend-api-key-renovation` et `resend-api-key-demenagement`
+ont été créés dans le projet `leads-engine-7067b`, chacun avec une version 1 active.
+Leurs références RUNTIME sont configurées dans apphosting.yaml. Sur ces deux
+secrets uniquement, le compte `firebase-app-hosting-compute` dispose des rôles
+Secret Accessor et Viewer ; l’agent Firebase App Hosting dispose du rôle
+Secret Version Manager, conformément au provisionnement du CLI Firebase.
+Les variables publiques d’expéditeur et de destinataire sont prêtes.
+Aucune alerte réelle n’a encore été envoyée.
