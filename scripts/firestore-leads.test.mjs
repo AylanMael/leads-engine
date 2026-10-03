@@ -17,7 +17,7 @@ connectFirestoreEmulator(partnerDb, "127.0.0.1", 8085, { mockUserToken: { sub: "
 const admin = initializeAdmin({ projectId }, "rules-admin");
 const adminDb = getAdminFirestore(admin);
 const denied = (operation) => assert.rejects(operation, (error) => error.code === "permission-denied");
-const customer = { firstName: "Test", lastName: "Emulateur", phone: "0600000000", email: "test@example.com" };
+const customer = { firstName: "Test", lastName: "Emulateur", phone: "0684275931", email: "test@example.com" };
 const moving = {
   vertical: "demenagement", status: "pending", createdAt: serverTimestamp(), customer,
   geo: { departureCity: "Versailles", departurePostalCode: "78000", arrivalCity: "Paris", arrivalPostalCode: "75001" },
@@ -31,7 +31,20 @@ const renovation = {
 try {
   const movingRef = await addDoc(collection(db, "leads"), moving);
   await addDoc(collection(db, "leads"), renovation);
+  for (const phone of ["0184275931", "0984275931", "+33684275931"]) {
+    await addDoc(collection(db, "leads"), { ...moving, customer: { ...customer, phone }, geo: {
+      ...moving.geo, departureDepartment: "78", departureStreetAddress: "12 rue de Satory",
+      arrivalDepartment: "75", arrivalStreetAddress: "",
+    } });
+  }
+  await addDoc(collection(db, "leads"), { ...renovation, geo: { ...renovation.geo, departureDepartment: "78", departureStreetAddress: "" } });
+  for (const phone of ["0600000000", "0612345678", "0712121212", "0688888888", "0884275931", "06 84 27 59 31", "06842759310"]) {
+    await denied(addDoc(collection(db, "leads"), { ...moving, customer: { ...customer, phone } }));
+  }
   for (const invalid of [
+    { ...moving, geo: { ...moving.geo, departureDepartment: "invalid" } },
+    { ...moving, geo: { ...moving.geo, departureStreetAddress: "x".repeat(251) } },
+    { ...renovation, geo: { ...renovation.geo, coordinates: "unexpected" } },
     { ...renovation, status: "assigned" },
     { ...renovation, assignedPartners: ["partner-test"] },
     { ...renovation, customer: { ...renovation.customer, phone: "0123456789" } },

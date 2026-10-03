@@ -2,9 +2,13 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, type FieldPath } from "react-hook-form";
+import { FormProvider, useForm, useWatch, type FieldPath } from "react-hook-form";
 import { z } from "zod";
 import { LeadDemenagementSchema, type LeadDemenagement } from "../types/lead";
+import { departmentFromPostalCode } from "../lib/address";
+import LocationFields from "./LocationFields";
+import PhoneField from "./PhoneField";
+import SocialProofBadge from "./SocialProofBadge";
 import { saveLead } from "../lib/leads";
 import { isFirebaseConfigured } from "../lib/firebase";
 
@@ -52,7 +56,7 @@ const steps: { title: string; description: string; fields: Field[] }[] = [
     fields: [
       { name: "customer.firstName", label: "Prénom", autoComplete: "given-name", error: "Indiquez votre prénom." },
       { name: "customer.lastName", label: "Nom", autoComplete: "family-name", error: "Indiquez votre nom." },
-      { name: "customer.phone", label: "Téléphone mobile", type: "tel", inputMode: "tel", autoComplete: "tel", hint: "Sans espaces : 0612345678 ou +33612345678 (06 ou 07).", error: "Saisissez un mobile en 06 ou 07 : 10 chiffres ou format +33, sans espaces." },
+      { name: "customer.phone", label: "Téléphone", type: "tel", inputMode: "tel", autoComplete: "tel", error: "Saisissez un téléphone français valide." },
       { name: "customer.email", label: "E-mail", type: "email", inputMode: "email", autoComplete: "email", error: "Saisissez une adresse e-mail valide." },
     ],
   },
@@ -70,9 +74,6 @@ export default function LeadFormDemenagement({
   defaultCity = "",
   defaultPostalCode = "",
 }: LeadFormDemenagementProps) {
-  const [departureLocked, setDepartureLocked] = useState(
-    () => Boolean(defaultCity.trim() && defaultPostalCode.trim()),
-  );
   const [step, setStep] = useState(0);
   const [success, setSuccess] = useState(false);
   const [advancing, setAdvancing] = useState(false);
@@ -82,7 +83,7 @@ export default function LeadFormDemenagement({
   const headingRef = useRef<HTMLHeadingElement>(null);
   const focusHeading = useRef(false);
   const id = useId();
-  const { register, trigger, handleSubmit, getFieldState, setFocus, formState } = useForm<LeadInput, unknown, LeadDemenagement>({
+  const methods = useForm<LeadInput, unknown, LeadDemenagement>({
     resolver: zodResolver(LeadDemenagementSchema),
     mode: "onTouched",
     shouldUnregister: false,
@@ -90,14 +91,20 @@ export default function LeadFormDemenagement({
       vertical: "demenagement",
       geo: {
         departurePostalCode: defaultPostalCode.trim(),
+        departureDepartment: departmentFromPostalCode(defaultPostalCode.trim()),
+        departureStreetAddress: "",
         departureCity: defaultCity.trim(),
         arrivalPostalCode: "",
         arrivalCity: "",
+        arrivalDepartment: "",
+        arrivalStreetAddress: "",
       },
       projectDetails: { departureElevator: false, arrivalElevator: false, targetDate: "" },
       customer: { firstName: "", lastName: "", phone: "", email: "" },
     },
   });
+  const { register, control, trigger, handleSubmit, getFieldState, formState } = methods;
+  const activeCity = useWatch({ control, name: "geo.departureCity" });
   const busy = advancing || formState.isSubmitting;
   const current = steps[step];
 
@@ -162,6 +169,7 @@ export default function LeadFormDemenagement({
           <p className="mt-2 text-slate-600">{current.description}</p>
           <p className="mt-2 text-sm text-slate-600">Tous les champs sont obligatoires, sauf les cases ascenseur à cocher si présent.</p>
 
+          <FormProvider {...methods}>
           <form noValidate aria-busy={busy} className="mt-6" onSubmit={async (event) => {
             event.preventDefault();
             if (actionPending.current) return;
@@ -170,6 +178,7 @@ export default function LeadFormDemenagement({
               if (step < steps.length - 1) {
                 setAdvancing(true);
                 if (await trigger(current.fields.map((field) => field.name), { shouldFocus: true })) goToStep(step + 1);
+                else if (step === 0) requestAnimationFrame(() => document.getElementById(getFieldState("geo.departureCity").invalid || getFieldState("geo.departurePostalCode").invalid ? "location-departure" : "location-arrival")?.focus());
               } else {
                 await handleSubmit(submit, (errors) => {
                   // Réafficher toute étape masquée qui comporte encore une erreur.
@@ -182,34 +191,15 @@ export default function LeadFormDemenagement({
               setAdvancing(false);
             }
           }}>
-            {step === 0 && departureLocked && (
-              <div className="mb-5 rounded-xl border border-teal-200 bg-teal-50 p-4">
-                <p id={`${id}-departure-hint`} className="text-sm text-slate-700">
-                  Votre ville de départ est pré-remplie depuis cette page locale.
-                </p>
-                <button
-                  type="button"
-                  disabled={busy}
-                  aria-controls={`${id}-geo.departureCity ${id}-geo.departurePostalCode`}
-                  onClick={() => {
-                    if (actionPending.current) return;
-                    setDepartureLocked(false);
-                    setFocus("geo.departureCity", { shouldSelect: true });
-                  }}
-                  className="mt-2 min-h-11 rounded-md text-left text-sm font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 disabled:cursor-wait disabled:opacity-60"
-                >
-                  Modifier la ville de départ
-                </button>
-              </div>
-            )}
             <fieldset disabled={busy} className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2">
               <legend className="sr-only">{current.title}</legend>
-              {current.fields.map((field) => {
+              {step === 0 && <LocationFields kind="departure" label="Ville ou adresse de départ" />}
+              {step === 0 && <LocationFields kind="arrival" label="Ville ou adresse d’arrivée" />}
+              {current.fields.filter((field) => !field.name.startsWith("geo.")).map((field) => {
+                if (field.name === "customer.phone") return <PhoneField key={field.name} />;
                 const fieldId = `${id}-${field.name}`;
                 const invalid = getFieldState(field.name, formState).invalid;
-                // readOnly conserve les valeurs dans React Hook Form et dans l'envoi.
-                const readOnly = departureLocked && (field.name === "geo.departureCity" || field.name === "geo.departurePostalCode");
-                const describedBy = [readOnly ? `${id}-departure-hint` : null, field.hint ? `${fieldId}-hint` : null, invalid ? `${fieldId}-error` : null].filter(Boolean).join(" ") || undefined;
+                const describedBy = [field.hint ? `${fieldId}-hint` : null, invalid ? `${fieldId}-error` : null].filter(Boolean).join(" ") || undefined;
                 const accessibility = { id: fieldId, "aria-invalid": invalid, "aria-describedby": describedBy };
                 return (
                   <div key={field.name} className="min-w-0">
@@ -229,7 +219,7 @@ export default function LeadFormDemenagement({
                             <option value="bureau">Bureau</option>
                           </select>
                         ) : (
-                          <input {...register(field.name, { valueAsNumber: field.type === "number" })} {...accessibility} readOnly={readOnly} required type={field.type ?? "text"} inputMode={field.inputMode} autoComplete={field.autoComplete} min={field.min} maxLength={field.maxLength} step={field.type === "number" ? "any" : undefined} className={`${controlClass} read-only:bg-slate-100 read-only:text-slate-700`} />
+                          <input {...register(field.name, { valueAsNumber: field.type === "number" })} {...accessibility} required type={field.type ?? "text"} inputMode={field.inputMode} autoComplete={field.autoComplete} min={field.min} maxLength={field.maxLength} step={field.type === "number" ? "any" : undefined} className={`${controlClass} read-only:bg-slate-100 read-only:text-slate-700`} />
                         )}
                       </>
                     )}
@@ -252,9 +242,11 @@ export default function LeadFormDemenagement({
                 {formState.isSubmitting ? "Envoi en cours…" : advancing ? "Vérification…" : step === steps.length - 1 ? "Envoyer ma demande" : "Suivant"}
               </button>
             </div>
+            <SocialProofBadge city={activeCity} />
             <p className="mt-4 text-center text-xs leading-5 text-slate-500">Vos coordonnées sont réservées au traitement de votre demande, avec 2 professionnels maximum. <a href="#mentions-legales" className="underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-emerald-700">Gestion de vos données</a></p>
             <p role="status" className="sr-only">{formState.isSubmitting ? "Envoi de votre demande en cours." : ""}</p>
           </form>
+          </FormProvider>
         </>
       )}
     </section>

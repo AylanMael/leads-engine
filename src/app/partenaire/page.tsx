@@ -14,8 +14,8 @@ const value = (input: unknown) => typeof input === "string" || typeof input === 
 const yesNo = (input: unknown) => typeof input === "boolean" ? input ? "Oui" : "Non" : "Non renseigné";
 function telephone(input: unknown) {
   if (typeof input !== "string") return null;
-  const phone = input.replace(/^0([67][0-9]{8})$/, "+33$1");
-  return /^\+33[67][0-9]{8}$/.test(phone) ? phone : null;
+  const phone = input.replace(/^0([1-79][0-9]{8})$/, "+33$1");
+  return /^\+33[1-79][0-9]{8}$/.test(phone) ? phone : null;
 }
 
 export default function PartnerPage() {

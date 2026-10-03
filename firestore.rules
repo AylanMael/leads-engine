@@ -20,6 +20,18 @@ service cloud.firestore {
       return value is string && value.matches('^(0|\\+33)[67][0-9]{8}$');
     }
 
+    function validLeadPhone(value) {
+      return value is string && value.matches('^(0|\\+33)[1-79][0-9]{8}$')
+        && !value.matches('^(0|\\+33)[1-79](00000000|01010101|02020202|03030303|04040404|05050505|06060606|07070707|08080808|09090909|10101010|11111111|12121212|13131313|14141414|15151515|16161616|17171717|18181818|19191919|20202020|21212121|22222222|23232323|24242424|25252525|26262626|27272727|28282828|29292929|30303030|31313131|32323232|33333333|34343434|35353535|36363636|37373737|38383838|39393939|40404040|41414141|42424242|43434343|44444444|45454545|46464646|47474747|48484848|49494949|50505050|51515151|52525252|53535353|54545454|55555555|56565656|57575757|58585858|59595959|60606060|61616161|62626262|63636363|64646464|65656565|66666666|67676767|68686868|69696969|70707070|71717171|72727272|73737373|74747474|75757575|76767676|77777777|78787878|79797979|80808080|81818181|82828282|83838383|84848484|85858585|86868686|87878787|88888888|89898989|90909090|91919191|92929292|93939393|94949494|95959595|96969696|97979797|98989898|99999999|01234567|12345678|23456789|98765432|87654321|76543210)$');
+    }
+
+    function validAddressExtras(geo, prefix) {
+      return (!(prefix + 'Department' in geo) || (geo[prefix + 'Department'] is string
+          && geo[prefix + 'Department'].matches('^([0-9]{2}|2[AB]|97[1-6])?$')))
+        && (!(prefix + 'StreetAddress' in geo) || (geo[prefix + 'StreetAddress'] is string
+          && geo[prefix + 'StreetAddress'].size() <= 250));
+    }
+
     function validPostalCode(value) {
       return value is string && value.matches('^[0-9]{5}$');
     }
@@ -31,14 +43,15 @@ service cloud.firestore {
         && (!renovation || customer.salutation in ['madame', 'monsieur'])
         && nonEmptyText(customer.firstName, 100)
         && nonEmptyText(customer.lastName, 100)
-        && validMobile(customer.phone)
+        && validLeadPhone(customer.phone)
         && validEmail(customer.email);
     }
 
     function validGeo(geo) {
       return geo is map
         && geo.keys().hasAll(['departurePostalCode', 'departureCity', 'arrivalPostalCode', 'arrivalCity'])
-        && geo.keys().hasOnly(['departurePostalCode', 'departureCity', 'arrivalPostalCode', 'arrivalCity'])
+        && geo.keys().hasOnly(['departurePostalCode', 'departureCity', 'arrivalPostalCode', 'arrivalCity', 'departureDepartment', 'arrivalDepartment', 'departureStreetAddress', 'arrivalStreetAddress'])
+        && validAddressExtras(geo, 'departure') && validAddressExtras(geo, 'arrival')
         && validPostalCode(geo.departurePostalCode)
         && validPostalCode(geo.arrivalPostalCode)
         && nonEmptyText(geo.departureCity, 150)
@@ -80,7 +93,8 @@ service cloud.firestore {
         && validCustomer(data.customer, true)
         && data.geo is map
         && data.geo.keys().hasAll(['departureCity', 'departurePostalCode'])
-        && data.geo.keys().hasOnly(['departureCity', 'departurePostalCode'])
+        && data.geo.keys().hasOnly(['departureCity', 'departurePostalCode', 'departureDepartment', 'departureStreetAddress'])
+        && validAddressExtras(data.geo, 'departure')
         && nonEmptyText(data.geo.departureCity, 150)
         && validPostalCode(data.geo.departurePostalCode)
         && data.projectType in ['globale', 'salle-de-bain', 'cuisine', 'menuiserie', 'isolation']

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { PhoneSchema } from "../lib/phone";
 
 /** Contrat de validation d'un lead de déménagement. */
 export const LeadDemenagementSchema = z.object({
@@ -6,6 +7,10 @@ export const LeadDemenagementSchema = z.object({
 
   /** Codes postaux à cinq chiffres et villes de départ et d'arrivée. */
   geo: z.object({
+    departureDepartment: z.string().regex(/^(?:|[0-9]{2}|2[AB]|97[1-6])$/).optional(),
+    departureStreetAddress: z.string().trim().max(250).optional(),
+    arrivalDepartment: z.string().regex(/^(?:|[0-9]{2}|2[AB]|97[1-6])$/).optional(),
+    arrivalStreetAddress: z.string().trim().max(250).optional(),
     departurePostalCode: z.string().regex(/^[0-9]{5}$/),
     arrivalPostalCode: z.string().regex(/^[0-9]{5}$/),
     departureCity: z.string().trim().min(1),
@@ -23,11 +28,11 @@ export const LeadDemenagementSchema = z.object({
     targetDate: z.string().trim().min(1),
   }),
 
-  /** Mobile sans séparateurs : 06/07 + huit chiffres ou +336/+337 + huit chiffres. */
+  /** Téléphone français normalisé, sans suites artificielles évidentes. */
   customer: z.object({
     firstName: z.string().trim().min(1),
     lastName: z.string().trim().min(1),
-    phone: z.string().regex(/^(?:0|\+33)[67][0-9]{8}$/),
+    phone: PhoneSchema,
     email: z.email(),
   }),
 });

@@ -1,10 +1,13 @@
 import { z } from "zod";
+import { PhoneSchema } from "../lib/phone";
 
 /** Contrat d'un projet de rénovation éligible à une mise en relation. */
 export const LeadRenovationSchema = z.object({
   vertical: z.literal("renovation"),
   /** Facultatif pour les anciens leads ; renseigné par le formulaire de demande. */
   geo: z.object({
+    departureDepartment: z.string().regex(/^(?:|[0-9]{2}|2[AB]|97[1-6])$/).optional(),
+    departureStreetAddress: z.string().trim().max(250).optional(),
     departureCity: z.string().trim().min(1, "Indiquez la commune du chantier."),
     departurePostalCode: z.string().regex(/^[0-9]{5}$/, "Indiquez un code postal à 5 chiffres."),
   }).optional(),
@@ -24,7 +27,7 @@ export const LeadRenovationSchema = z.object({
     salutation: z.enum(["madame", "monsieur"], { error: "Sélectionnez votre civilité." }),
     lastName: z.string().trim().min(1, "Indiquez votre nom."),
     firstName: z.string().trim().min(1, "Indiquez votre prénom."),
-    phone: z.string().regex(/^(?:0|\+33)[67][0-9]{8}$/, "Saisissez un mobile en 06 ou 07, sans espaces (10 chiffres ou format +33)."),
+    phone: PhoneSchema,
     email: z.email("Saisissez une adresse e-mail valide."),
   }),
 });

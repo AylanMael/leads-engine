@@ -1,12 +1,16 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { useForm, useWatch, type FieldPath } from "react-hook-form";
+import { FormProvider, useForm, useWatch, type FieldPath } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LeadRenovationSchema, type LeadRenovation } from "../types/lead-renovation";
 import { useTenantConfig } from "./TenantProvider";
 import { isFirebaseConfigured } from "../lib/firebase";
+import { departmentFromPostalCode } from "../lib/address";
+import LocationFields from "./LocationFields";
+import PhoneField from "./PhoneField";
+import SocialProofBadge from "./SocialProofBadge";
 import { saveLead } from "../lib/leads";
 
 // Le choix locataire existe dans l'interface, mais le contrat final le refuse.
@@ -58,7 +62,7 @@ const steps: { title: string; fields: Field[] }[] = [
     ] },
     { name: "customer.firstName", label: "Prénom", autoComplete: "given-name" },
     { name: "customer.lastName", label: "Nom", autoComplete: "family-name" },
-    { name: "customer.phone", label: "Téléphone mobile", type: "tel", autoComplete: "tel" },
+    { name: "customer.phone", label: "Téléphone", type: "tel", autoComplete: "tel" },
     { name: "customer.email", label: "E-mail", type: "email", autoComplete: "email" },
   ] },
 ];
@@ -81,16 +85,18 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
   const errorRef = useRef<HTMLParagraphElement>(null);
   const id = useId();
   const { theme } = useTenantConfig();
-  const { register, control, trigger, handleSubmit, setError, clearErrors, getFieldState, formState } = useForm<FormInput, unknown, LeadRenovation>({
+  const methods = useForm<FormInput, unknown, LeadRenovation>({
     resolver: zodResolver(FormSchema),
     mode: "onTouched",
     shouldUnregister: false,
     defaultValues: {
       vertical: "renovation",
-      geo: { departureCity: defaultCity, departurePostalCode: defaultPostalCode },
+      geo: { departureCity: defaultCity.trim(), departurePostalCode: defaultPostalCode.trim(), departureDepartment: departmentFromPostalCode(defaultPostalCode.trim()), departureStreetAddress: "" },
       customer: { firstName: "", lastName: "", phone: "", email: "" },
     },
   });
+  const { register, control, trigger, handleSubmit, getFieldState, formState, setError, clearErrors } = methods;
+  const activeCity = useWatch({ control, name: "geo.departureCity" });
   const isTenant = useWatch({ control, name: "property.occupancyStatus" }) === "locataire";
   const busy = advancing || formState.isSubmitting;
   const submissionError = formState.errors.root?.submission?.message;
@@ -145,6 +151,7 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
           </nav>
           <h2 ref={headingRef} id={`${id}-heading`} tabIndex={-1} className="text-2xl font-bold focus:outline-none">{steps[step].title}</h2>
           <p className="mt-2 text-sm text-slate-600">Tous les champs sont obligatoires.</p>
+          <FormProvider {...methods}>
           <form noValidate aria-busy={busy} className="mt-6" onSubmit={async (event) => {
             event.preventDefault();
             if (pending.current || (step > 0 && isTenant)) return;
@@ -154,6 +161,7 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
               if (step < 2) {
                 setAdvancing(true);
                 if (await trigger(steps[step].fields.map(({ name }) => name), { shouldFocus: true })) goToStep(step + 1);
+                else if (step === 0) requestAnimationFrame(() => document.getElementById(getFieldState("geo.departureCity").invalid || getFieldState("geo.departurePostalCode").invalid ? "location-departure" : "location-arrival")?.focus());
               } else {
                 await handleSubmit(submit, (errors) => {
                   const invalidStep = steps.findIndex((item) => item.fields.some(({ name }) => getFieldState(name, { ...formState, errors }).invalid));
@@ -167,7 +175,9 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
           }}>
             <fieldset disabled={busy} className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2">
               <legend className="sr-only">{steps[step].title}</legend>
-              {steps[step].fields.map((field) => {
+              {step === 0 && <LocationFields kind="departure" label="Commune ou adresse du chantier" />}
+              {steps[step].fields.filter((field) => !field.name.startsWith("geo.")).map((field) => {
+                if (field.name === "customer.phone") return <PhoneField key={field.name} />;
                 const fieldId = `${id}-${field.name}`;
                 const error = getFieldState(field.name, formState).error;
                 const blocked = field.name === "property.occupancyStatus" && isTenant;
@@ -194,9 +204,11 @@ export default function LeadFormRenovation({ defaultCity = "", defaultPostalCode
               {step > 0 && <button type="button" disabled={busy} onClick={() => { if (!pending.current) goToStep(step - 1); }} className={`${buttonClass} border border-slate-400 hover:bg-slate-50 focus-visible:ring-emerald-700`}>Retour</button>}
               <button type="submit" disabled={busy || (step > 0 && isTenant)} className={`${buttonClass} ${theme.button} sm:ml-auto`}>{formState.isSubmitting ? "Envoi en cours…" : advancing ? "Vérification…" : step === 2 ? "Envoyer ma demande" : "Suivant"}</button>
             </div>
+            <SocialProofBadge city={activeCity} />
             <p className="mt-4 text-center text-xs leading-5 text-slate-500">Vos coordonnées sont réservées au traitement de votre demande, avec 2 professionnels maximum. <a href="#mentions-legales" className="underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-emerald-700">Gestion de vos données</a></p>
             <p role="status" className="sr-only">{formState.isSubmitting ? "Envoi de votre demande en cours." : ""}</p>
           </form>
+          </FormProvider>
         </>
       )}
     </section>

@@ -32,7 +32,7 @@ async function main() {
     assert.equal(snapshot.length, 2);
     // Fixe les soldes du scénario indépendamment des recharges manuelles précédentes.
     await withLocalStore(({ partners }) => partners.forEach((partner) => { partner.credits = partner.vertical === "demenagement" ? 5 : 1; }), true);
-    const customer = { firstName: "Test", lastName: "Local", phone: "0600000000", email: "test@example.com" };
+    const customer = { firstName: "Test", lastName: "Local", phone: "0684275931", email: "test@example.com" };
     const renovation = { vertical: "renovation", geo: { departureCity: "Versailles", departurePostalCode: "78000" }, projectType: "cuisine", property: { occupancyStatus: "proprietaire_occupant", surface: 20, buildingType: "maison" }, budgetBracket: "10k-30k", customer: { ...customer, salutation: "madame" } };
     const create = async (lead) => {
       const response = await leads.POST(request(lead)); assert.equal(response.status, 201);
