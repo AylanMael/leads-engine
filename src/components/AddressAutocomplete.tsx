@@ -31,7 +31,7 @@ export default function AddressAutocomplete({ label, value, onChange, error, inp
       } catch {
         if (!abort.signal.aborted) setStatus("Recherche indisponible. Modifiez votre saisie pour réessayer.");
       }
-    }, 300);
+    }, 250);
     return () => { clearTimeout(timer); abort.abort(); };
   }, [query, value]);
   function select(address: AddressSelection) { onChange(address); setOpen(false); setResults([]); setStatus(""); }
@@ -49,7 +49,7 @@ export default function AddressAutocomplete({ label, value, onChange, error, inp
         if ((event.key === "ArrowDown" || event.key === "ArrowUp") && results.length) {
           event.preventDefault(); setOpen(true); setActive((previous) => previous < 0 ? (event.key === "ArrowDown" ? 0 : results.length - 1) : (previous + (event.key === "ArrowDown" ? 1 : -1) + results.length) % results.length);
         }
-        if (event.key === "Enter" && !value) { event.preventDefault(); if (open && active >= 0) select(results[active]); }
+        if (event.key === "Enter" && !value) { event.preventDefault(); if (open && active >= 0 && results[active]) select(results[active]); }
       }} className="mt-2 min-h-12 w-full min-w-0 rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-base read-only:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-700 aria-[invalid=true]:border-red-700" />
     <p id={`${id}-hint`} className="mt-2 text-xs text-slate-600">{value ? "Localisation sélectionnée. L’adresse de rue reste facultative." : "Saisissez au moins 3 caractères, puis sélectionnez une suggestion officielle."}</p>
     {value && <button type="button" onClick={() => { setQuery(""); onChange(null); input.current?.focus(); }} className="mt-1 min-h-11 text-sm font-semibold text-emerald-800 underline focus-visible:outline-2">Modifier {label.toLowerCase()}</button>}

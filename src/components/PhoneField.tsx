@@ -13,6 +13,7 @@ export default function PhoneField() {
         const raw = input.value;
         let caretDigits = raw.slice(0, input.selectionStart ?? raw.length).replace(/\D/g, "").length;
         let next = normalizePhone(raw);
+        if (/^\d+$/.test(next)) next = next.slice(0, 10);
         // Supprimer un espace du masque supprime aussi le chiffre précédent.
         if ((event.nativeEvent as InputEvent).inputType === "deleteContentBackward" && next === field.value && caretDigits > 0) {
           next = next.slice(0, caretDigits - 1) + next.slice(caretDigits);
@@ -27,7 +28,7 @@ export default function PhoneField() {
         });
       }} aria-invalid={Boolean(fieldState.error)} aria-describedby={`${id}-hint${fieldState.error ? ` ${id}-error` : ""}`}
       className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-700 aria-[invalid=true]:border-red-700" />
-    <p id={`${id}-hint`} className="mt-2 text-sm leading-5 text-slate-600">Aucun démarchage automatisé. Votre numéro sert exclusivement aux 2 professionnels sélectionnés pour planifier votre devis.</p>
+    <p id={`${id}-hint`} className="mt-2 text-sm leading-5 text-slate-600">Aucun démarchage automatisé. Ce numéro sert uniquement à l'envoi de vos 2 estimations comparatives.</p>
     {fieldState.error && <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-red-700">{fieldState.error.message}</p>}
   </div>} />;
 }
