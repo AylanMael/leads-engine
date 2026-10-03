@@ -34,6 +34,17 @@ env:
     value: contact@vsw-digital.fr
     availability: [RUNTIME]
 
-  # Premier déploiement sans Stripe ni notifications : aucun secret externe requis.
-# Réactiver les intégrations après provisionnement des secrets et de leurs accès.
+  - variable: ADMIN_NOTIFICATION_EMAIL
+    value: contact@vsw-digital.fr
+    availability: [RUNTIME]
+  - variable: EMAIL_FROM_RENOVATION
+    value: "Rénovizo <notifications@renovizo.fr>"
+    availability: [RUNTIME]
+  - variable: EMAIL_FROM_DEMENAGEMENT
+    value: "Déménizo <notifications@demenizo.fr>"
+    availability: [RUNTIME]
+
+  # Ajouter RESEND_API_KEY_RENOVATION et RESEND_API_KEY_DEMENAGEMENT
+  # après création des secrets et attribution de leurs accès au backend.
+# Stripe reste désactivé en attendant son provisionnement.
 # Voir DEPLOYMENT.md. Les Cloud Functions ont leur propre configuration.

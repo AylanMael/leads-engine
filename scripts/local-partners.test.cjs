@@ -21,6 +21,8 @@ async function main() {
     await fs.copyFile(path.join(root, "src/data/partners-local.json"), path.join(dataDirectory, "partners-local.json"));
     process.chdir(temporaryDirectory);
     process.env.NODE_ENV = "development";
+    // Cette suite ne doit jamais se connecter à un projet réel via Admin SDK.
+    process.env.FIREBASE_ADMIN_PROJECT_ID = "lead-engine-local";
     const leads = require(path.join(root, "src/app/api/leads/route.ts"));
     const partners = require(path.join(root, "src/app/api/partners/route.ts"));
     const assign = require(path.join(root, "src/app/api/leads/assign/route.ts"));
@@ -45,7 +47,7 @@ async function main() {
     const outside = await create({ ...renovation, geo: { departureCity: "Paris", departurePostalCode: "75001" } });
     assert.equal((await allocation(outside)).status, 409);
     const missingGeo = { ...renovation }; delete missingGeo.geo;
-    assert.equal((await allocation(await create(missingGeo))).status, 409);
+    assert.equal((await leads.POST(request(missingGeo))).status, 400);
     const raced = await Promise.all([allocation(first), allocation(second)]);
     assert.deepEqual(raced.map((response) => response.status).sort(), [200, 409]);
     const assigned = (await list()).find((lead) => lead.status === "assigned");

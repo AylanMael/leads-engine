@@ -1,11 +1,14 @@
 import { randomUUID } from "node:crypto";
-import { LeadDemenagementSchema } from "../../../types/lead";
-import { LeadRenovationSchema } from "../../../types/lead-renovation";
+import { after } from "next/server";
+import { FieldValue } from "firebase-admin/firestore";
+import { getAdminDb } from "../../../lib/firebase-admin";
+import { submitLead } from "../../../lib/lead-submission";
+import { notifyNewLead } from "../../../lib/notifications";
 import { localError, localResponse, withLocalStore } from "../../../lib/local-store";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-const schema = LeadDemenagementSchema.or(LeadRenovationSchema);
+export const maxDuration = 30;
 
 export async function GET(request: Request) {
   if (process.env.NODE_ENV !== "development") return localResponse({ error: "Not found" }, 404);
@@ -18,17 +21,21 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  if (process.env.NODE_ENV !== "development") return localResponse({ error: "Not found" }, 404);
-  let payload: unknown;
-  try { payload = await request.json(); }
-  catch { return localResponse({ error: "JSON invalide." }, 400); }
-  const parsed = schema.safeParse(payload);
-  if (!parsed.success) return localResponse({ error: "Les informations du lead sont invalides." }, 400);
-  try {
-    const id = randomUUID();
-    await withLocalStore(({ leads }) => {
-      leads.push({ ...parsed.data, id, createdAt: new Date().toISOString(), status: "pending" });
-    }, true);
-    return localResponse({ success: true, id }, 201);
-  } catch (error) { return localError(error); }
+  const project = process.env.FIREBASE_ADMIN_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
+  const useLocalStore = process.env.NODE_ENV === "development" && (!project || project === "lead-engine-local" || project.startsWith("REPLACE_WITH_"));
+  return submitLead(request, {
+    persist: async (lead) => {
+      const id = randomUUID();
+      if (useLocalStore) {
+        const createdAt = new Date().toISOString();
+        await withLocalStore(({ leads }) => { leads.push({ ...lead, id, createdAt, status: "pending" }); }, true);
+        return { id, lead, createdAt };
+      }
+      const result = await getAdminDb().collection("leads").doc(id).create({ ...lead, status: "pending", createdAt: FieldValue.serverTimestamp() });
+      return { id, lead, createdAt: result.writeTime.toDate().toISOString() };
+    },
+    // Les simulations locales n'envoient pas d'alertes à de vrais destinataires.
+    defer: useLocalStore ? () => undefined : after,
+    notify: notifyNewLead,
+  });
 }
